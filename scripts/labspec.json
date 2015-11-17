@@ -1,0 +1,142 @@
+{
+    "lab": {
+        "build_requirements": {
+            "platform": {
+                "arch": "i386", 
+                "build_steps": {
+                    "build": ["make -C ../src"], 
+                    "configure": [], 
+                    "post_build": [], 
+                    "pre_build": [], 
+                    "status": []
+                }, 
+                "installer": [], 
+                "os": "ubuntu", 
+                "osVersion": "12", 
+                "service_pack": ""
+            }
+        }, 
+        "description": {
+            "developer": [
+                {
+                    "contact": {
+                        "alternate_email": "rahulswarup@dei.ac.in", 
+                        "email": "ajaykant900@gmail.com", 
+                        "mobile_number": "+91945451159", 
+                        "office_number": ""
+                    }, 
+                    "department": "Faculty of Engineering", 
+                    "institute": "Dayalbagh Educational Institute", 
+                    "name": "Ajay Kant  Upadhyay", 
+                    "organization": "DEI", 
+                    "role": "Lab Developer", 
+                    "title": "Project Associate", 
+                    "web": "14.139.245.214/mfvlab/home.php"
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "rahulswarup@rediffmail.com", 
+                        "email": "ajaykant900@gmail.com", 
+                        "mobile_number": "+91945451159", 
+                        "office_number": ""
+                    }, 
+                    "department": "Faculty of Engineering", 
+                    "institute": "Dayalbagh Educaional Institute", 
+                    "name": "Dr. Rahul Swarup Sharma", 
+                    "organization": "DEI", 
+                    "role": "IIC", 
+                    "title": "Project Incharge", 
+                    "web": "14.139.245.214/mfvlab/home.php"
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "Dayalbagh Educaional Institute", 
+                    "name": "", 
+                    "organization": "", 
+                    "role": "", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "Dayalbagh Educaional Institute", 
+                    "name": "", 
+                    "organization": "", 
+                    "role": "", 
+                    "title": "", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "", 
+                        "email": "", 
+                        "mobile_number": "", 
+                        "office_number": ""
+                    }, 
+                    "department": "", 
+                    "institute": "Dayalbagh Educaional Institute", 
+                    "name": "", 
+                    "organization": "", 
+                    "role": "", 
+                    "title": "", 
+                    "web": ""
+                }
+            ], 
+            "discipline": [
+                "Metal Forming Virtual Simulation Lab"
+            ], 
+            "id": "", 
+            "integration_level": 5, 
+            "name": "mfvlab", 
+            "server-side": true, 
+            "status": "Released", 
+            "type": ""
+        }, 
+        "runtime_requirements": {
+            "platform": {
+                "arch": "i386", 
+                "hosting": "dedicated", 
+                "installer": ["sudo apt-get update",
+                "sudo apt-get install -y php5 apache2"], 
+                "lab_actions": {
+                    "backup": [], 
+                    "clean": [], 
+                    "init": ["mv /var/www/index.html index.html.default",
+                        "cp -r ../build/* /var/www/"
+                        ], 
+                    "pause": [], 
+                    "publish": [], 
+                    "restore": [], 
+                    "resume": [], 
+                    "shutdown": ["service apache2 stop"], 
+                    "start": ["service apache2 start"],  
+                    "stats": [], 
+                    "stop": []
+                }, 
+                "memory": {
+                    "max_required": "2gb", 
+                    "min_required": "256mb"
+                }, 
+                "os": "ubuntu", 
+                "osVersion": "12", 
+                "servicepack": "", 
+                "storage": {
+                    "min_required": "10gb"
+                }
+            }
+        }
+    }, 
+    "template": "1.0"
+}

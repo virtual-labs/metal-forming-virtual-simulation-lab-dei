@@ -96,12 +96,7 @@ cabs/flash/swflash.cab#version=6,0,40,0" height="180" width="320" id="mymovienam
 <param name="bgcolor" value="#ffffff" /> 
 <embed src="Home.swf" quality="high" bgcolor="#ffffff" height="180" width="320"
 name="mymoviename" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
-</embed></object> 
-<center style="Background:#FF00FF; color:#FFFFFF;">Updated on 08-09-2015</center></td></tr>
-<tr><td></td><td style="font-size:14px; text-align:center">Download flash player plugin for<br/>
-<a href="Plugins/install_flash_player_mozilla.exe"><u>Mozilla Firefox</u></a>,&nbsp;&nbsp;
-<a href="Plugins/flashplayer11-2_p2_install_win_32.exe"><u>IE-32_bit</u></a>,&nbsp;&nbsp;
-<a href="Plugins/flashplayer11-2_p2_install_win_64.exe"><u>IE-64_bit</u></a></td></tr></table>
+</embed></object></td></tr></table>
 <?php
  	//Opening file to get counter value
 	$fp = fopen ("counter.txt", "r");

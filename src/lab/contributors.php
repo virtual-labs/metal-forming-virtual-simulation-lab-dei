@@ -2,11 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Virtual Lab - Dayalbagh Educational Institute</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
 <link href="css/advanced.css" media="all" rel="stylesheet" type="text/css" />
+<SCRIPT language="javascript">
+msg = "Virtual Lab - Dayalbagh Educational Institute ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</SCRIPT>
 </head>
 <body id="draggingDisabled" >
 <div id="header_main"></div>
@@ -43,7 +53,7 @@ include("mainmenu.php");
     <td><a style="color:#F08D20" href="http://www.dei.ac.in/dei/usic/index.php/usic-faculty/2-soami-piara-satsangee" target="_blank" title="Profile - Prof. S.P. Satsangee">Prof. S.P. Satsangee</a> (DEI Virtual Labs  Co-ordinator)</td>
   </tr>
   <tr>
-    <td>Er. Ajay Kant Upadhyay (Web Developer)</td>
+    <td><a style="color:#F08D20" href="ajay.html" target="_blank" title="Profile - Ajay Kant Upadhyay">Er. Ajay Kant</a> (Web Developer)</td>
   </tr>
 </table><br>
 <b style="font-size:1.8em; color:#0000ff; text-decoration:underline">Technical Support-Members (Present and Past)</b>
@@ -53,11 +63,11 @@ include("mainmenu.php");
     <td>Er. Jitendra Kumar Verma</td>
   </tr>
   <tr>
-    <td>Er. Ishant Singhal</td>
+    <td>Er. Jatin Dhingra</td>
     <td>Er. Pankaj Kumar</td>
   </tr>
   <tr>
-    <td>Er. Vishal Chaturani</td>
+    <td>Er. Ishant Singhal</td>
     <td>Er. Vishnu Pradeep Sharma</td>
   </tr>
   <tr>
@@ -86,6 +96,9 @@ include("mainmenu.php");
   <tr>
     <td></td>
     <td>Er. Harshit Anand</td>
+  </tr><tr>
+    <td></td>
+    <td>Er. Vishal Chaturani</td>
   </tr>
 </table>
 </center>

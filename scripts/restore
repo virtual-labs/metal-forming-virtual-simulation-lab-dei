@@ -1,0 +1,8 @@
+#!/bin/bash
+# Restore Script for Computer Programming Lab
+
+# Restore Script restores the backup of the database used by the lab.
+# Since there is no database being used for Computer Programming Lab, 
+# the script does nothing. 
+
+echo "There is a database used for the lab."
