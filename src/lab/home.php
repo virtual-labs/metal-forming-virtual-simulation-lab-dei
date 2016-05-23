@@ -80,23 +80,9 @@ The <b style="color:#0000FF; font-size:16px; text-transform:uppercase;">
 objective of Metal Forming Virtual Simulation Lab</b> is to make students understand the various fundamental metal forming processes and to recognise the effect of various process parameters with the help of computer
 numerical simulations. In this lab animations of upsetting process, extrusion process, multi-step forging processes, closed die forging, rolling process, sheet metal processes and intricate phenomena during these processes are incorporated to make the student appreciate and develop better understanding of the fundamental concepts.
 </td><td>
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/
-cabs/flash/swflash.cab#version=6,0,40,0" height="280" width="320" id="mymoviename"> 
-<param name="movie"  value="Slide.swf" />
-<param name="wmode" value="transparent"/>
-<param name="quality" value="high" />
-<param name="bgcolor" value="#ffffff" />
-<embed src="Slide.swf" quality="high" wmode="transparent" bgcolor="#ffffff" height="280" width="320"
-name="mymoviename" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
-</embed></object>
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/
-cabs/flash/swflash.cab#version=6,0,40,0" height="180" width="320" id="mymoviename"> 
-<param name="movie"  value="Home.swf" />
-<param name="quality" value="high" />
-<param name="bgcolor" value="#ffffff" /> 
-<embed src="Home.swf" quality="high" bgcolor="#ffffff" height="180" width="320"
-name="mymoviename" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
-</embed></object></td></tr></table>
+<iframe width="320" height="280" src="https://www.youtube.com/embed/Vmvy4WEQtFU?rel=0&autoplay=1&loop=1&playlist=Vmvy4WEQtFU" frameborder="0" allowfullscreen></iframe>
+<iframe width="320" height="180" src="https://www.youtube.com/embed/qcHpUx_NIbE?rel=0&autoplay=1&loop=1&playlist=qcHpUx_NIbE" frameborder="0" allowfullscreen></iframe>
+</td></tr></table>
 <?php
  	//Opening file to get counter value
 	$fp = fopen ("counter.txt", "r");

@@ -53,7 +53,7 @@ include("mainmenu.php");
     <td><a style="color:#F08D20" href="http://www.dei.ac.in/dei/usic/index.php/usic-faculty/2-soami-piara-satsangee" target="_blank" title="Profile - Prof. S.P. Satsangee">Prof. S.P. Satsangee</a> (DEI Virtual Labs  Co-ordinator)</td>
   </tr>
   <tr>
-    <td><a style="color:#F08D20" href="ajay.html" target="_blank" title="Profile - Ajay Kant Upadhyay">Er. Ajay Kant</a> (Web Developer)</td>
+    <td>Er. Ajay Kant (Web Developer)</td>
   </tr>
 </table><br>
 <b style="font-size:1.8em; color:#0000ff; text-decoration:underline">Technical Support-Members (Present and Past)</b>
@@ -63,11 +63,11 @@ include("mainmenu.php");
     <td>Er. Jitendra Kumar Verma</td>
   </tr>
   <tr>
-    <td>Er. Jatin Dhingra</td>
+    <td>Er. Ishant Singhal</td>
     <td>Er. Pankaj Kumar</td>
   </tr>
   <tr>
-    <td>Er. Ishant Singhal</td>
+    <td></td>
     <td>Er. Vishnu Pradeep Sharma</td>
   </tr>
   <tr>

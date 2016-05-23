@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml1">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Virtual Lab-Dayalbagh Educational Institute</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
@@ -13,6 +12,17 @@ font-size: 16px;
 line-height: 18px;
 }
 </style>
+<SCRIPT language="javascript">
+msg = "Virtual Lab - Dayalbagh Educational Institute ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</SCRIPT>
 <script language="javascript">
 <!-- 
 var isNS = (navigator.appName == "Netscape") ? 1 : 0;

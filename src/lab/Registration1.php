@@ -7,6 +7,17 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
 <link href="css/advanced.css" media="all" rel="stylesheet" type="text/css" />
+<SCRIPT language="javascript">
+msg = "Virtual Lab - Dayalbagh Educational Institute ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</SCRIPT>
 <script language="javascript">
 <!-- 
 var isNS = (navigator.appName == "Netscape") ? 1 : 0;
