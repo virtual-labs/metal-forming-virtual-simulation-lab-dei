@@ -224,7 +224,19 @@ EOQ;
 <span class="blue">Comparision</span><br><br>
 <center>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/8b5zd85WfHM?rel=0" frameborder="0" allowfullscreen></iframe></center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

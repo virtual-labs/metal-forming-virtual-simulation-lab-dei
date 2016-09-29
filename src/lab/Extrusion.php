@@ -89,7 +89,19 @@ Figure 5: Dies with different inclination angle w.r.t. horizontal with their cor
 &nbsp;&nbsp;• Oil well casing<br/>
 &nbsp;&nbsp;• Oil refinery equipment<br/><br/>
 <span class="blue">MANUFACTURE:</span> Hot extrusion is a metal forming process of forcing a heated billet to be reduced in its cross section by forcing it to flow through a shaped die opening under a high pressure. During extrusion metal billet is under compression stress state in all three direction and shear forces, No tensile force is produced, which makes high deformation possible without tearing the metal. The hot extrusion is the widely used due to its relative low deformation resistance of the metal for production of long straight metal products of constant cross section (such as bars, solid and hollow sections, tubes, wires and strips) from materials that can not be formed by cold extrusion. Hot extrusion is an attractive process in industry due to its ability to achieve energy and material savings, quality improvement and development of homogeneous properties throughout the component. In spite of these advantages the process is rather complicate as it requires careful control. In the industrial application of the extrusion process, die design and process control are mainly based on empirical knowledge.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

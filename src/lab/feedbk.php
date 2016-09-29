@@ -643,7 +643,19 @@ Faculty of Engineering, Dayalbagh Educational Institute, Agra</b></center><br><b
 <center><input type="submit" name="send" value="Submit">
 <input type="button" name="reset_form" value="Reset Form" onclick="this.form.reset();"></center>
 </FORM>
-<br/></div></div>
+<br/></div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div>
 <div id="footer">
 &copy; Faculty of Engineering - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

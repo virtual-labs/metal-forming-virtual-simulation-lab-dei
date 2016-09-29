@@ -831,7 +831,16 @@ $_SESSION['speech'] = "In this video you can see the extrusion process of Alumin
 Ram velocity is set as 5mm per sec with the radius of 5mm. Die angle is specified as 90<sup>o</sup> and it is specified that there is high friction during this hot extrusion process.";
 }
 else print ("<script language='javascript'>alert('You are missing some parameters! Please try again.')</script>");
-}	
+}
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
 ?>
 </div> 
 <div id="footer">

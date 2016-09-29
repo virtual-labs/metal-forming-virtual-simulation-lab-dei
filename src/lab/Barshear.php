@@ -37,7 +37,19 @@ Shearing process is used to cut off material by using punch, die and blank holde
 <br /><br /><center><img src="images/Barshear/Press.png" alt="Bar Shearing Press"><br />Figure 2: Bottom shear die rests on a hydraulic cushion and moves<br/>when force on it reaches 5 tonnes or more</center>
 <br /><span class="blue">Sheared Billet</span>: The figure below shows the sheared billet. The right portion of bar is the sheared one whereas the bar on the other side is the left over bar for further shearing.
 <br /><br /><center><img src="images/Barshear/Billet.png" alt="Bar Sheared Billet"><br />Figure 3: Sheared Billet</center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

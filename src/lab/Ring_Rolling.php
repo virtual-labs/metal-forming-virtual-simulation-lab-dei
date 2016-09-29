@@ -372,7 +372,19 @@ If we assume the roll radius much greater than the height change (large roll ass
 </tr>
 </table></center>
 Therefore, an upper limit on the prescribed mandrel advance velocity is established in order to maintain rotation of the ring during rolling.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

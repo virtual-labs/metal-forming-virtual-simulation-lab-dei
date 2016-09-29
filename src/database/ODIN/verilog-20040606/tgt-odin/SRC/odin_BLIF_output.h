@@ -1,0 +1,11 @@
+void oBo_generate_blif(int number_to_mark_as_flag, int *cell_count, FILE *out, ivl_design_t des, const char *path);
+void oBo_depth_first_traversal_start(FILE *out);
+void oBo_depth_first_traverse(node_t *node, FILE *out, int traverse_mark_number);
+void oBo_device_define_output_traverse(node_t *node, FILE *out, int traverse_mark_number);
+void oBo_define_logical_function( node_t *node, int library_index, FILE *out);
+void oBo_define_register(node_t *node, FILE *out);
+void oBo_define_compound_logic(node_t *node, char *unique_name, int library_index, FILE *out);
+void oBo_create_an_output_joining(node_t *node, char** output_strings, FILE *out);
+char *oBo_generate_wire_name(node_t *node, int output_index) ;
+char *oBo_append_string_with_number(char *string, int number);
+char *oBo_generate_port_string(node_t *node_with_port);

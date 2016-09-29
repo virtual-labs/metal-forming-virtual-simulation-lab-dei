@@ -38,7 +38,19 @@ Hammer forging may be defined as a open-die hot forging in which billet is compr
 <br/><br/>c) <span class="blue">Counterblow Hammers:</span> This hammer has two rams that simultaneously approach each other horizontally or vertically to forge the part. As in open-die forging operations, the part mat be rotated between blows for proper shaping of the workpiece during forging. Counter-blow hammers operate at high speeds and transmits less vibration to their bases. Capacities range upto 1200kJ.
 <br/><br/>c) <span class="blue">High-Energy-Rate Machines:</span> In a high-energy-rate machine, the ram is accelerated by inert gas at high pressure, and part is forged in one blow at a very high speed. Although there are several types of these machines, various problems associated with their operation and maintenance, with die breakage, and safety consideration have greatly limited their actual use in forging plants.
 <br/>For hot forging operations performed on hammer, it may be interesting to simulate hammer a with rigidity so as to better describe the kinematic and the energy vs time evolution. This is very important if the user wants to predict the correct number of blows which will be needed to forge the part to the final height.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

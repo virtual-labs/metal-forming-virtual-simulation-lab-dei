@@ -75,7 +75,19 @@ In circular cogging/becking there is no need to make number of passes because af
 <br/><span class="blue">Results:</span> After the operation the ring get surface hardened. The grain structure of the ring gets changed by hammering of the hammer. The figure 10 shows the change in grain structure of the ring.
 <br/><br/><center><img src="images/Cogging/GrainStructure.png" width="500" height="250"><br/>Figure-10: Change in grain structure in the ring and equivalent strain generated after the operation</center>
 <br/>A significant amount of equivalent strain in generated at the surface of the ring which is the aim of the operation. This will make the ring hardened from the surface and increases it strength.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

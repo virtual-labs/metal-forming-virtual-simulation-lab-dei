@@ -1,0 +1,9 @@
+August 9th, 2005
+
+- Having problems with latest version of FSM reencoding
+- Two of the benchmarks compile, but don't pass through Stratix
+- Blif generation tested, but not completely verified.  Some
+files don't seem to work with VPR (cause VPR to crash)
+- 4 bugs have been fixed
+- Xilinx support still not available.  Not sure if I will
+do this

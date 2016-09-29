@@ -1,0 +1,645 @@
+<?xml version="1.0"?>
+<fpga_architecture>
+
+	<!-- Device info provides high level information about the FPGA -->
+	<device_info>
+		<device_family_name>Stratix</device_family_name>
+		<device_name>EP1S10</device_name>
+		<devices>
+			<!-- number DSP block specifed in manual 2 on Pg 2-52 -->
+			<device> <device_name>DSP_block</device_name> <number>6</number> </device>
+		</devices>
+	</device_info>
+
+	<match_library>
+		<device>
+			<name>DSP_block</name>
+			<internal_configurations>
+				<config> <target_name>multiplier_9x9</target_name><number>8</number> </config>
+				<config> <target_name>multiplier_18x18</target_name><number>4</number> </config>
+				<config> <target_name>multiplier_36x36</target_name><number>1</number> </config>
+				<config> <target_name>MAC_18x18</target_name><number>2</number> </config>
+				<config> <target_name>two_mult_add_9x9</target_name><number>4</number> </config>
+				<config> <target_name>two_mult_add_18x18</target_name><number>2</number> </config>
+				<config> <target_name>four_mult_add_9x9</target_name><number>2</number> </config>
+				<config> <target_name>four_mult_add_18x18</target_name><number>1</number> </config>
+			</internal_configurations>
+		</device>
+	</match_library>
+
+	<primitives>
+		<!-- 9x9 multiplier -->
+		<target>
+			<name>multiplier_9x9</name>
+			<associated_macro_name>MN_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>9</width> </port>
+					<port> <name>b</name> <width>9</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>18</width> </port>
+				</output_ports>
+				<timing_delay>9</timing_delay>
+			</primitive>
+		</target>
+		
+		<!-- 18x18 multiplier -->
+		<target>
+			<name>multiplier_18x18</name>
+			<associated_macro_name>MN_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>18</width> </port>
+					<port> <name>b</name> <width>18</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>36</width> </port>
+				</output_ports>
+				<timing_delay>14</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 36x36 multiplier -->
+		<target>
+			<name>multiplier_36x36</name>
+			<associated_macro_name>MN_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>36</width> </port>
+					<port> <name>b</name> <width>36</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>72</width> </port>
+				</output_ports>
+				<timing_delay>14</timing_delay>
+			</primitive>
+		</target>
+
+		<!-- 64x64 multiplier -->
+		<target>
+			<name>multiplier_36x36</name>
+			<associated_macro_name>MN_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>64</width> </port>
+					<port> <name>b</name> <width>64</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>72</width> </port>
+				</output_ports>
+				<timing_delay>14</timing_delay>
+			</primitive>
+		</target>
+
+
+		<!-- VCC -->
+		<target>
+			<name>vcc</name>
+			<associated_macro_name>VCC</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+				<port> <name>in</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>out</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>0</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- GND -->
+		<target>
+			<name>gnd</name>
+			<associated_macro_name>GND</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>in</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>out</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>0</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- NOT -->
+		<target>
+			<name>not</name>
+			<associated_macro_name>MN_NOT</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>in</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>out</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 AND gate -->
+		<target>
+			<name>and</name>
+			<associated_macro_name>MN_AND</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 OR gate -->
+		<target>
+			<name>or</name>
+			<associated_macro_name>MN_OR</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 NAND gate -->
+		<target>
+			<name>nand</name>
+			<associated_macro_name>MN_NAND</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 NOR gate -->
+		<target>
+			<name>nor</name>
+			<associated_macro_name>MN_NOR</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 XOR gate -->
+		<target>
+			<name>xor</name>
+			<associated_macro_name>MN_XOR</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 XNOR gate -->
+		<target>
+			<name>xnor</name>
+			<associated_macro_name>MN_XNOR</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 input MUX gate -->
+		<target>
+			<name>mux2</name>
+			<associated_macro_name>MN_MUX</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+					<port> <name>s</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>2</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 DFF gate -->
+		<target>
+			<name>dff</name>
+			<associated_macro_name>MN_FF</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>clock</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+
+		<!-- 2 DFFR gate -->
+		<target>
+			<name>dffr</name>
+			<associated_macro_name>MN_FFR</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>clock</name> <width>1</width> </port>
+					<port> <name>sset</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- BUF gate -->
+		<target>
+			<name>buf</name>
+			<associated_macro_name>MN_BUF</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 input CMP_EQ gate -->
+		<target>
+			<name>cmp_eq</name>
+			<associated_macro_name>MN_EQ</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 input CMP_GT gate -->
+		<target>
+			<name>cmp_gt</name>
+			<associated_macro_name>MN_GT</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	
+		<!-- 2 input adder gate -->
+		<target>
+			<name>adder</name>
+			<associated_macro_name>MN_ADD</associated_macro_name>
+			<matchable>FALSE</matchable>
+			<primitive>
+				<input_ports>
+					<port> <name>a</name> <width>1</width> </port>
+					<port> <name>b</name> <width>1</width> </port>
+<!--					<port> <name>cin</name> <width>1</width> </port>-->
+				</input_ports>
+				<output_ports>
+					<port> <name>o</name> <width>1</width> </port>
+			<!--		<port> <name>cout</name> <width>1</width> </port> -->
+				</output_ports>
+				<timing_delay>1</timing_delay>
+			</primitive>
+		</target>
+	</primitives>
+
+	<target_functional_elements>
+		<!-- 4 9*9 into add -->
+		<target>
+			<name>four_mult_add_9x9</name>
+			<associated_macro_name>MN_FOUR_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<graph>
+				<!-- need 4 9x9 multipliers -->
+				<node_primitive>
+					<instance_name>mult_9_a</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+					<is_seed_node>yes</is_seed_node>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_9_b</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_9_c</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_9_d</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+				</node_primitive>
+				<!-- need a tree of adders -->
+				<node_array_primitive>
+					<instance_name>add_a</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>18</number>
+				</node_array_primitive>
+				<node_array_primitive>
+					<instance_name>add_b</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>18</number>
+				</node_array_primitive>
+				<node_array_primitive>
+					<instance_name>add_c</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>18</number>
+				</node_array_primitive>
+	
+				
+				<!-- Join the multipliers to the top of the adder tree -->
+				<bus_edge>
+					<from><instance_name>mult_9_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_a</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_9_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_a</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_9_c</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_b</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_9_d</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_b</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+	
+				<!-- Join the root so we have one add output -->
+				<bus_edge>
+					<from><instance_name>add_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_c</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>add_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_c</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+			</graph>
+		</target>
+
+		<!-- 4 18*18 into add -->
+		<target>
+			<name>four_mult_add_18x18</name>
+			<associated_macro_name>MN_FOUR_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<graph>
+				<node_primitive>
+					<instance_name>mult_18_a</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+					<is_seed_node>yes</is_seed_node>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_18_b</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_18_c</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_18_d</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+				</node_primitive>
+				<node_array_primitive>
+					<instance_name>add_a</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+				<node_array_primitive>
+					<instance_name>add_b</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+				<node_array_primitive>
+					<instance_name>add_c</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+	
+				
+				<bus_edge>
+					<from><instance_name>mult_18_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_a</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_18_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_a</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_18_c</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_b</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_18_d</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_b</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>add_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_c</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>add_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>add_c</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+			</graph>
+		</target>
+	
+		<!-- 2 18*18 into add -->
+		<target>
+			<name>two_mult_add_18x18</name>
+			<associated_macro_name>MN_TWO_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<graph>
+				<node_primitive>
+					<instance_name>mult_18_a</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+					<is_seed_node>yes</is_seed_node>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_18_b</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+				</node_primitive>
+				<node_array_primitive>
+					<instance_name>adds</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+				
+				<bus_edge>
+					<from><instance_name>mult_18_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_18_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+			</graph>
+		</target>
+	
+		<!-- 2 9*9 into add -->
+		<target>
+			<name>two_mult_add_9x9</name>
+			<associated_macro_name>MN_TWO_MULT</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<graph>
+				<node_primitive>
+					<instance_name>mult_9_a</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+					<is_seed_node>yes</is_seed_node>
+				</node_primitive>
+				<node_primitive>
+					<instance_name>mult_9_b</instance_name>
+					<ref_name>multiplier_9x9</ref_name>
+				</node_primitive>
+				<node_array_primitive>
+					<instance_name>adds</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>18</number>
+				</node_array_primitive>
+				
+				<bus_edge>
+					<from><instance_name>mult_9_a</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>mult_9_b</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+			</graph>
+		</target>
+	
+		<!-- 18*18 macs -->
+		<target>
+			<name>MAC_18x18</name>
+			<associated_macro_name>MN_MAC</associated_macro_name>
+			<seed_macro_type>MN_MULT</seed_macro_type>
+			<matchable>TRUE</matchable>
+			<graph>	
+				<node_primitive>
+					<instance_name>mult_18</instance_name>
+					<ref_name>multiplier_18x18</ref_name>
+					<is_seed_node>yes</is_seed_node>
+				</node_primitive>
+				<node_array_primitive>
+					<instance_name>adds</instance_name>	
+					<ref_name>adder</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+				<node_array_primitive>
+					<instance_name>ffs</instance_name>	
+					<ref_name>dff</ref_name>	
+					<number>36</number>
+				</node_array_primitive>
+				
+				<bus_edge>
+					<from><instance_name>mult_18</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>ffs</instance_name><port_name>o</port_name></from>
+					<to><instance_name>adds</instance_name><port_name>b</port_name></to>
+				</bus_edge>
+	
+				<bus_edge>
+					<from><instance_name>adds</instance_name><port_name>o</port_name></from>
+					<to><instance_name>ffs</instance_name><port_name>a</port_name></to>
+				</bus_edge>
+			</graph>
+		</target>
+	</target_functional_elements>
+
+	<inferable_devices>
+		<infered_device>
+			<name>counter</name>
+			<graph>
+			</graph>
+		</infered_device>
+	</inferable_devices>
+
+</fpga_architecture>

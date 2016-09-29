@@ -1,0 +1,19 @@
+#! /usr/local/bin/vvp
+:vpi_time_precision + 0;
+:vpi_module "system";
+S_0x8312f00 .scope module, "counter" "counter";
+ .timescale 0;
+V_$0x83131a8 .var "a", 0, 0;
+V_$0x8324088 .var "b", 0, 0;
+V_$0x83240b8 .net "clock", 0, 0, C<z>;
+V_$0x8324120 .var "out", 0, 0;
+E_0x8313248 .event posedge, C<z>;
+    .scope S_0x8312f00;
+T_0 ;
+    %wait E_0x8313248;
+    %set V_$0x83131a8[0], 1;
+    %set V_$0x8324088[0], 0;
+    %load/v 8, V_$0x83131a8[0], 1;
+    %assign V_$0x8324120[0], 0, 8;
+    %jmp T_0;
+    .thread T_0;

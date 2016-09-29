@@ -1,0 +1,23 @@
+module addsub(clk,reset,sum,carry,sub);
+
+input clk;
+
+input reset;
+
+output reg [7:0] sum,sub;
+output reg carry;
+reg [7:0] a,b;
+
+reg [8:0] d,k;
+
+always @(posedge clk or negedge reset)
+begin
+d <= a+b;
+sum <= d[7:0];
+carry <= d[8];
+sub <= a-b;
+end
+
+endmodule
+
+                        

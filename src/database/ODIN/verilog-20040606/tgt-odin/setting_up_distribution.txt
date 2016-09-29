@@ -1,0 +1,60 @@
+This file describes some information which I find useful for remebering
+various things I have to do to set up Odin.
+
+This is how I build and test a distribution I want to release.
+1. cp -R TOOLS/VERILOG_COMPILER/verilog-20040606/ ODIN
+2. Makefile tgt-odin - change directories for -I, -L and prefix
+3. verilog.../BIN/lib/ivl/odin-paj_vpr.conf needs propoer directories.
+4. peter_peter_compile_script_and_config_local.bash and peter_compile_script_local.bash need to have directories where install 
+5. Change line in verilog-20040606/Makefile from:
+"$(CXX) $(LDFLAGS) -o ivl $O $(dllib)"
+to:
+"$(CXX) $(CXXFLAGS)  $(LDFLAGS) -finstrument-functions -o ivl $O $(dllib)
+-Ltgt-odin -lodin -Ltgt-odin/PETER_LIB/ -lpeters -lm
+-L/nfs/eecg/q/grads10/jamieson/PROGRAMMING_TOOLS/libxml2-2.6.2/PETER_BIN/lib
+-lxml2 -lz -lpthread"
+where:
+"-L/nfs/eecg/q/grads10/jamieson/PROGRAMMING_TOOLS/libxml2-2.6.2/PETER_BIN/lib"
+should be defined as the location of your libxml2 library.
+6. cd tgt-odin/ && make clean && make && cd .. && make clean && ./peter_compile_script_and_config_local.bash
+7. Test on SAMPLE_FILES
+8. Delete everything.
+9. cp -R TOOLS/VERILOG_COMPILER/verilog-20040606/ ODIN
+10. cd tgt-odin && make clean && cd .. && make clean
+11. clean out the tags file in tgt-odin/SRC
+12. tar -cvf odin.tar ODIN
+
+Icarus files that are changed by incorporating my version of Odin:
+- /BIN/lib/ivl/odin-paj_vpr.inc ... needs to be added
+- t-dll.c has an include, and I make a few changes to stop dynamic linking.
+  Makes it easier for me to debug.
+- Makefile needs to have all the libraries in odin included in the final
+  compile.  See How I make the build for details.
+
+Testing:
+1. Go to ODIN/verilog-20040606/tgt-odin/SAMPLE_FILES
+2. Update the propoer path in config_file.txt for the location of ODIN on your
+system.
+3. run "exec_ivlpp.bash bm_expr_all_mod.v"
+4. run "exec_ivl.bash"
+5. At this point if everything has run properly you should see a
+temp.synthesized.v file which is the structural verilog version of
+bm_expr_all_mod.v.  This temp.synthesized.v can be inputted into Quartus. 
+
+The scripts exec_ivlpp.bash, exec_ivl.bash, and exec_ivl_gdb.bash are the
+basic scripts I use for running Odin on Verilog designs.  exec_ivlpp.bash is
+the preprocessor.  exec_ivl.bash and exec_ivl_gdb.bash run the synthesis tool,
+and the later is my entrance script to gdb.  For the gdb execution note that
+the .gdbinit file contains the arguments that are passed to gdb.
+
+Linux Packages I've had to install:
+GCC 3.2 - gcc version 3.2
+binutils -  BFD version 2.13.2
+gdb - GNU gdb 5.3
+gperf - gperf-2.7.2
+libxml2 - libxml2-2.6.2
+
+For each of these packages I had to install these over the basic Linux system
+we have on our local department machines.  Each of these packages I downloaded
+and installed.  Then I added the directories with the binaries into the path
+in my ".cshrc" file.

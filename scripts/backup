@@ -1,8 +1,38 @@
 #/bin/bash
-# Backup Script for Computer Programming Lab
+# backup Script for FPGA and embedded systems Lab
 
-# Backup Script takes the backup of the database used by the lab.
-# Since there is no database being used for Computer Programming Lab, 
+# backup Script takes the backup of the data used by the lab.
+# Since there is no data being used by FPGA and embedded systems Lab, 
 # the script does nothing. 
+# Usage of the script
 
-echo "There is no database used for the lab."
+# To use backup script, run the command
+# ./scripts/backup
+#!/bin/bash
+
+DB_NAME="VirtualLab"
+OUT_FILE_NAME="labbackup"
+VERSION="v1.0"
+OUT_FILE="$OUT_FILE_NAME-$VERSION.tar"
+
+# take the dump
+mysqldump -u root -pklaxmikantp $DB_NAME > $DB_NAME.sql
+if [ $? -ne 0 ]; then
+  echo "Error: Something went wrong while taking db dump."
+  echo "Aborting backup."
+  exit 1;
+fi
+
+# tar the $DB_NAME folder
+tar cfvz $OUT_FILE $DB_NAME.sql
+if [ $? -ne 0 ]; then
+  echo "Error: Something went wrong while tar-ing the dump."
+  echo "Aborting backup."
+  exit 1;
+fi
+
+#clean up data
+rm $DB_NAME.sql
+echo "Backup successful."
+
+exit 0;

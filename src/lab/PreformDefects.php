@@ -47,7 +47,19 @@ These rules must be followed when designing parts to be upset forged:<br>
 •	Low quality of pre-forms or defects will frequently cause problems in the bottle blow-moulder.<br>
 •	Pre-form defects are hardly visible to the eye.<br>
 •	Pre-forms found insufficient by the pre-form Inspector are returned to the supplier.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

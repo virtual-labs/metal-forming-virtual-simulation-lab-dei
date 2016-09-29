@@ -1,0 +1,70 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(fpga.c)
+
+dnl Checks for programs.
+AC_PROG_CC
+
+AC_PROG_INSTALL
+
+AC_CANONICAL_HOST
+# $host
+
+# Combined check for Microsoft-related bogosities; sets WIN32 if found
+AX_WIN32
+
+AC_CHECK_HEADERS(malloc.h)
+
+# Darwin requires -no-cpp-precomp
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+esac
+
+# The -fPIC flag is used to tell the compiler to make position
+# independent code. It is needed when making shared objects.
+
+AC_MSG_CHECKING("for flag to make position independent code")
+PICFLAG=-fPIC
+case "${host}" in
+
+     *-*-cygwin*)
+	PICFLAG=
+	;;
+
+     *-*-hpux*)
+	PICFLAG=+z
+	;;
+
+esac
+AC_SUBST(PICFLAG)
+AC_MSG_RESULT($PICFLAG)
+
+AC_MSG_CHECKING("for shared library link flag")
+shared=-shared
+case "${host}" in
+
+     *-*-cygwin*)
+	shared="-shared -Wl,--enable-auto-image-base"
+	;;
+
+     *-*-hpux*)
+	shared="-b"
+	;;
+
+     *-*-darwin1.[0123])
+	shared="-bundle -undefined suppress"
+	;;
+
+     *-*-darwin*)
+	shared="-bundle -undefined suppress -flat_namespace"
+	;;
+
+esac
+AC_SUBST(shared)
+AC_MSG_RESULT($shared)
+
+AX_CPP_IDENT
+
+AC_OUTPUT(Makefile)

@@ -1,0 +1,125 @@
+#
+# Copyright 2003 Stephen Williams  (steve at icarus.com)
+#    This source code is free software; you can redistribute it
+#    and/or modify it in source code form under the terms of the GNU
+#    Library General Public License as published by the Free Software
+#    Foundation; either version 2 of the License, or (at your option)
+#    any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Library General Public License for more details.
+#
+#    You should have received a copy of the GNU Library General Public
+#    License along with this program; if not, write to the Free
+#    Software Foundation, Inc.,
+#    59 Temple Place - Suite 330
+#    Boston, MA 02111-1307, USA
+#
+#ident "$Id: Makefile.in,v 1.16 2004/02/10 19:25:01 steve Exp $"
+#
+#
+SHELL = /bin/sh
+
+VERSION = 0.0
+
+prefix = /usr/local
+exec_prefix = ${prefix}
+srcdir = .
+mandir = ${prefix}/man
+
+
+
+bindir = ${exec_prefix}/bin
+libdir = ${exec_prefix}/lib
+includedir = $(prefix)/include
+
+CC = gcc
+INSTALL = /usr/bin/install -c
+INSTALL_PROGRAM = ${INSTALL}
+INSTALL_DATA = ${INSTALL} -m 644
+
+CPPFLAGS = -DHAVE_CVS_IDENT=1 -I.. -I$(srcdir) -I$(srcdir)/..  -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_MALLOC_H=1  -fPIC
+CFLAGS = -Wall -g -O2
+LDFLAGS = 
+
+all: dep fpga.tgt
+
+dep:
+	mkdir dep
+
+%.o: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -MD -c $< -o $*.o
+	mv $*.d dep
+
+D = d-generic.o d-generic-edif.o d-lpm.o d-virtex.o d-virtex2.o
+O = edif.o fpga.o gates.o mangle.o tables.o generic.o xilinx.o $D
+
+ifeq (no,yes)
+  TGTLDFLAGS=-L.. -livl
+  TGTDEPLIBS=../libivl.a
+else
+  TGTLDFLAGS=
+  TGTDEPLIBS=
+endif
+
+
+fpga.tgt: $O $(TGTDEPLIBS)
+	$(CC) -shared -o $@ $O $(TGTLDFLAGS)
+
+iverilog-fpga.ps: $(srcdir)/iverilog-fpga.man
+	man -t $(srcdir)/iverilog-fpga.man > iverilog-fpga.ps
+
+iverilog-fpga.pdf: iverilog-fpga.ps
+	ps2pdf iverilog-fpga.ps iverilog-fpga.pdf
+
+
+Makefile: Makefile.in config.status
+	./config.status
+
+clean:
+	rm -rf *.o dep fpga.tgt
+
+distclean: clean
+	rm -f Makefile config.status config.log config.cache
+
+check: all
+
+ifeq (no,yes)
+INSTALL_DOC = $(prefix)/iverilog-fpga.pdf $(mandir)/man1/iverilog-fpga.1
+INSTALL_DOCDIR = $(mandir)/man1
+all: iverilog-fpga.pdf
+else
+INSTALL_DOC = $(mandir)/man1/iverilog-fpga.1
+INSTALL_DOCDIR = $(mandir)/man1
+endif
+
+install: all installdirs $(libdir)/ivl/fpga.tgt $(INSTALL_DOC) $(libdir)/ivl/fpga.conf $(libdir)/ivl/fpga-s.conf
+
+$(libdir)/ivl/fpga.tgt: ./fpga.tgt
+	$(INSTALL_PROGRAM) ./fpga.tgt $(libdir)/ivl/fpga.tgt
+
+$(libdir)/ivl/fpga.conf: $(srcdir)/fpga.conf
+	$(INSTALL_DATA) $(srcdir)/fpga.conf $(libdir)/ivl/fpga.conf
+
+$(libdir)/ivl/fpga-s.conf: $(srcdir)/fpga-s.conf
+	$(INSTALL_DATA) $(srcdir)/fpga-s.conf $(libdir)/ivl/fpga-s.conf
+
+
+$(mandir)/man1/iverilog-fpga.1: $(srcdir)/iverilog-fpga.man
+	$(INSTALL_DATA) $(srcdir)/iverilog-fpga.man $(mandir)/man1/iverilog-fpga.1
+
+$(prefix)/iverilog-fpga.pdf: iverilog-fpga.pdf
+	$(INSTALL_DATA) iverilog-fpga.pdf $(prefix)/iverilog-fpga.pdf
+
+installdirs: ../mkinstalldirs
+	$(srcdir)/../mkinstalldirs $(libdir)/ivl
+
+uninstall:
+	rm -f $(libdir)/ivl/fpga.tgt
+	rm -f $(INSTALL_DOC)
+	rm -f $(libdir)/ivl/fpga-s.conf
+	rm -f $(libdir)/ivl/fpga.conf
+
+-include $(patsubst %.o, dep/%.d, $O)

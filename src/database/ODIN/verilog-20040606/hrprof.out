@@ -1,0 +1,15 @@
+processor clock 3000.22 MHz
+secs according to tsc: 0.000189176
+secs according to tod: 0.00577709
+charged secs 0.000189176
+given out 0.000189176
+hist:
+0x8154010 13
+0x8154070 1
+0x81540e0 3
+0x8154120 1
+0x81541e0 8
+0x8154520 3
+0x81548f0 14
+0x8154a60 136
+0x8154ba8 10

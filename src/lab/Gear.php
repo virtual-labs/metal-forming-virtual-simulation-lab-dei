@@ -49,7 +49,19 @@ A gear is a rotating machine part having cut teeth, or cogs, which mesh with ano
 References:<br/>
 http://en.wikipedia.org/wiki/Gear<br/>
 http://nptel.iitm.ac.in/courses/IIT-MADRAS/Machine_Design_II/pdf/2_5.pdf
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

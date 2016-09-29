@@ -1,8 +1,65 @@
 #!/bin/bash
-# Restore Script for Computer Programming Lab
+# Restore Script for Computer Organization Lab
 
-# Restore Script restores the backup of the database used by the lab.
-# Since there is no database being used for Computer Programming Lab, 
+# Restore Script restores the backup of the data used by the lab.
+# Since there is no data being used by Computer Organization Lab, 
 # the script does nothing. 
 
-echo "There is a database used for the lab."
+# Usage of the script
+
+# To use restore script, run the command
+# ./scripts/restore
+
+DB_NAME="VirtualLab"
+VERSION="v1.0"
+
+BACKUP_FILE=$1
+
+# Absolute path to the scripts directory
+SCRIPTS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+usage() {
+  echo "Usage:"
+  echo "$0 <path/to/the/backup/file.tar>"
+}
+
+if [ -z $BACKUP_FILE ]; then
+  echo "Error: No arguments were passed!!"
+  echo "Error: The path to the backup file must be passed."
+  usage
+  exit 1;
+fi
+
+# untar the $BACKUP_FILE file
+tar xfvz $BACKUP_FILE
+if [ $? -ne 0 ]; then
+  echo "Error: Something went wrong while untaring."
+  echo "Aborting restore."
+  exit 1;
+fi
+
+# stop services before restoring..
+service apache2 stop
+
+# restore from the database
+mysql -u root -pklaxmikantp -Bse "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
+if [ $? -ne 0 ]; then
+  echo "Error: Something went wrong while creating database $DB_NAME".
+  echo "Aborting...."
+  exit 1;
+fi
+
+mysql -u root -pklaxmikantp $DB_NAME < $DB_NAME.sql
+if [ $? -ne 0 ]; then
+  echo "Error: Something went wrong while restoring db dump."
+  echo "Aborting restore."
+  exit 1;
+fi
+
+# start back the services
+#$SCRIPTS_DIR/start
+service apache2 start
+
+echo "Restore successful."
+
+exit 0;

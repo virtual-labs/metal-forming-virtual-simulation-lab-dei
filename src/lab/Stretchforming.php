@@ -47,7 +47,19 @@ This process is ideally suited for the manufacture of large parts made from alum
 <br/><br/><span class="blue">Sheet Stretch Forming</span>: Sheet Stretch Forming is commonly used by aircraft builders to manufacture fuselage skin sections from special aerospace aluminium alloy sheets.
 <br/><br/><span class="blue">Extrusion Stretch Forming</span>: Extrusion stretch forming press designs for contouring aluminium aerospace alloys in the form of extrusion roll formed profiles, or press braked shapes.  These presses are sometimes called stretch wrap or swing arm presses. The basic press design has two arms or carriage beams that hold multiple-positioning gripping jaws.  The jaws are attached to hydraulic tension cylinders that provide the stretch of the work-piece. 
 The arms swing by rotating on large machined pins with bearings, thus allowing the work-piece to wrap around and against the forming die.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

@@ -251,6 +251,15 @@ In the left hand side of the video one can depict the variation of strain with m
 </td></tr></table>
 <?php
 }
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
 ?>
 </center></div>
 <div id="footer">

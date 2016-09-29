@@ -34,7 +34,19 @@ Therefore a few variables and a graph of the simulation stages will be presented
 </table>
 <center><img src="images/MetalForming/SimSetup.jpg" alt="Conditions of Metal Forming Simulations" width="750" height="450" /><br/>Figure:1 Conditions during Simulation<br/><br/>
 <iframe width="600" height="400" src="https://www.youtube.com/embed/kqJR-_fp8AY?rel=0" frameborder="0" allowfullscreen></iframe></center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

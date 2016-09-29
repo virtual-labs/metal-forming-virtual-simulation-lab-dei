@@ -237,6 +237,15 @@ One can observe the reverse upsetting process here. The colored contours can be 
 </td></tr></table>
 <?php
 }
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
 ?>
 </center></div>
 <div id="footer">

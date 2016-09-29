@@ -75,7 +75,19 @@ When the press or hammer dies close, the workpiece will move in a path of least 
 quickly causing internal fractures. This can be remedied by following proper cooling practices.<br/><br/>
 <span class="blue">B) Scale Pits:</span> This is seen as irregular deputations on the surface of the forging. This is primarily caused because of improper cleaning of the
 stock used for forging. The oxide and scale gets embedded into the finish forging surface. When the forging is cleaned by pickling, these are seen as deputations on the forging surface.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

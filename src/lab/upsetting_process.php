@@ -95,7 +95,19 @@ There are basically three processes when it comes to manufacturing alloy wheel w
 <br/><br/><span class="blue">HIGH PRESSURE DIE CASTING (HPDC):</span> This process uses a die arranged in a large machine that has high closing force to clamp the die closed. The molten magnesium is poured into a filler tube called a shot sleeve. A piston pushes the metal into the die with high speed and pressure, the magnesium solidifies and the die is opened and the wheel is released. Wheels produced by this method can offer reductions in price and improvements in corrosion resistance but they are less ductile and of lower strength due to the nature of HPDC.
 <br/><br/><span class="blue">LOW PRESSURE CASTING (LPDC):</span> This process usually employs a steel die; it is arranged above the crucible filled with molten magnesium. Most commonly the crucible is sealed against the die and pressurized air/cover gas mix is used to force the molten metal up a straw like filler tube into the die. When processed using best practice methods LPDC wheels can offer improvements in ductility over HPDC magnesium wheels and any cast aluminium wheels, they remain less ductile than forged magnesium.
 <br/><br/><span class="blue">GRAVITY CASTING (PERMANENT MOLD AND SAND CASTING):</span> Gravity cast magnesium wheels have been in production since the early 1920's. This method offers wheels with good ductility, and relative properties above what can be made with aluminium casting. Tooling costs for gravity cast wheels are among the cheapest of any process. This has allowed small batch production, flexibility in design and short development time.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

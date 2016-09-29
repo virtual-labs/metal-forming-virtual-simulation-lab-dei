@@ -1,0 +1,191 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(vpi_config.h.in)
+AC_CONFIG_HEADER(vpi_config.h)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_CHECK_TOOL(STRIP, strip, true)
+AC_CHECK_PROGS(LEX,flex,none)
+if test "$LEX" = "none"
+then
+	echo "*** Error: No suitable flex found. ***"
+        echo "    Please install the 'flex' package."
+        exit 1
+fi
+
+AC_EXEEXT
+AC_SUBST(EXEEXT)
+
+# Combined check for Microsoft-related bogosities; sets WIN32 if found
+AX_WIN32
+
+AX_CPP_IDENT
+
+# vvp32 is by default disabled
+#enable_vvp32=no
+AC_SUBST(enable_vvp32)
+
+
+AC_CHECK_HEADERS(malloc.h inttypes.h)
+
+AC_CHECK_LIB(z, gzwrite)
+AC_CHECK_LIB(z, gzwrite, HAVE_LIBZ=yes, HAVE_LIBZ=no)
+AC_SUBST(HAVE_LIBZ)
+if test "$WIN32" = "yes"; then
+AC_CHECK_LIB(bz2, main)
+else
+AC_CHECK_LIB(bz2, BZ2_bzdopen)
+fi
+
+# --
+# Look for a dl library to use. First look for the standard dlopen
+# functions, and failing that look for the HP specific shl_load function.
+
+AC_CHECK_HEADERS(dlfcn.h dl.h, break)
+
+DLLIB=''
+AC_CHECK_LIB(dl,dlopen,[DLLIB=-ldl])
+if test -z "$DLLIB" ; then
+AC_CHECK_LIB(dld,shl_load,[DLLIB=-ldld])
+fi
+AC_SUBST(DLLIB)
+
+AC_PROG_INSTALL
+
+AC_LANG_C
+AC_C_BIGENDIAN
+
+AC_CANONICAL_HOST
+# Do some operating system specific setup. We put the file64_support
+# define in a substitution instead of simply a define because there
+# are source files (namely lxt support files) that don't include any
+# config.h header file.
+file64_support=''
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+
+    *-*-linux*)
+	AC_DEFINE(_LARGEFILE_SOURCE)
+	file64_support='-D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64'
+	;;
+esac
+AC_SUBST(file64_support)
+
+# $host
+
+# The -fPIC flag is used to tell the compiler to make position
+# independent code. It is needed when making shared objects.
+
+AC_MSG_CHECKING("for flag to make position independent code")
+PICFLAG=-fPIC
+case "${host}" in
+
+     *-*-cygwin*)
+	PICFLAG=
+	;;
+
+     *-*-hpux*)
+	PICFLAG=+z
+	;;
+
+esac
+AC_SUBST(PICFLAG)
+AC_MSG_RESULT($PICFLAG)
+
+AX_LD_EXTRALIBS
+
+# Darwin requires -no-cpp-precomp
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+esac
+
+# The -rdynamic flag is used by iverilog when compiling the target,
+# to know how to export symbols of the main program to loadable modules
+# that are brought in by -ldl
+AC_MSG_CHECKING("for -rdynamic compiler flag")
+
+rdynamic=-rdynamic
+case "${host}" in
+
+    *-*-netbsd*)
+	rdynamic="-Wl,--export-dynamic"
+	;;
+
+    *-*-solaris*)
+	rdynamic=""
+	;;
+
+    *-*-cygwin*)
+	rdynamic=""
+	;;
+
+    *-*-hpux*)
+	rdynamic="-E"
+	;;
+
+    *-*-darwin*)
+	rdynamic="-Wl,-all_load"
+	strip_dynamic="-SX"
+	;;
+
+esac
+AC_SUBST(rdynamic)
+AC_MSG_RESULT($rdynamic)
+AC_SUBST(strip_dynamic)
+AC_MSG_RESULT($strip_dynamic)
+
+AC_MSG_CHECKING("for shared library link flag")
+shared=-shared
+case "${host}" in
+
+     *-*-cygwin*)
+        shared="-shared -Wl,--enable-auto-image-base"
+	;;
+
+     *-*-hpux*)
+	shared="-b"
+	;;
+
+     *-*-darwin1.[0123])
+	shared="-bundle -undefined suppress"
+	;;
+
+     *-*-darwin*)
+	shared="-bundle -undefined suppress -flat_namespace"
+	;;
+esac
+
+AC_SUBST(shared)
+AC_MSG_RESULT($shared)
+
+AX_CPP_IDENT
+
+# If not otherwise specified, set the libdir64 variable
+# to the same as libdir.
+AC_MSG_CHECKING(for libdir64 path)
+if test x${libdir64} = x
+then
+	libdir64="${libdir}"
+fi
+AC_SUBST(libdir64)
+AC_MSG_RESULT(${libdir64})
+
+# where to put vpi subdirectories
+AC_MSG_CHECKING(for VPI subdirectories)
+if test x${vpidir1} = x
+then
+	vpidir1="."
+fi
+
+AC_SUBST(vpidir1)
+AC_SUBST(vpidir2)
+AC_MSG_RESULT(${vpidir1} ${vpidir2})
+
+AC_OUTPUT(Makefile)

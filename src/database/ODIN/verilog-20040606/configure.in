@@ -1,0 +1,220 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(netlist.h)
+AC_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADER(_pli_types.h)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_CHECK_TOOL(STRIP, strip, true)
+AC_CHECK_PROGS(XGPERF,gperf,none)
+if test "$XGPERF" = "none"
+then
+	echo ""
+        echo "*** Warning: No suitable gperf found. ***"
+	echo "    The gperf package is essential for building ivl from"
+	echo "    CVS sources, or modifying the parse engine of ivl itself."
+	echo "    You can get away without it when simply building from"
+	echo "    snapshots or major releases."
+	echo ""
+fi
+
+AC_CHECK_PROGS(LEX,flex,none)
+if test "$LEX" = "none"
+then
+	echo "*** Error: No suitable flex found. ***"
+        echo "    Please install the 'flex' package."
+        exit 1
+fi
+
+AC_CHECK_PROGS(YACC,bison,none)
+if test "$YACC" = "none"
+then
+	echo "*** Error: No suitable bison found. ***"
+        echo "    Please install the 'bison' package."
+        exit 1
+fi
+
+AC_EXEEXT
+AC_SUBST(EXEEXT)
+
+# Combined check for Microsoft-related bogosities; sets WIN32 if found
+AX_WIN32
+
+# vvp32 is by default disabled
+#enable_vvp32=no
+AC_SUBST(enable_vvp32)
+
+
+AC_LANG_CPLUSPLUS
+
+AC_CHECK_HEADERS(getopt.h malloc.h inttypes.h libiberty.h iosfwd sys/wait.h)
+
+AC_CHECK_LIB(z, gzwrite)
+AC_CHECK_LIB(z, gzwrite, HAVE_LIBZ=yes, HAVE_LIBZ=no)
+AC_SUBST(HAVE_LIBZ)
+if test "$WIN32" = "yes"; then
+AC_CHECK_LIB(bz2, main)
+else
+AC_CHECK_LIB(bz2, BZ2_bzdopen)
+fi
+
+AC_MSG_CHECKING(for sys/times)
+AC_TRY_LINK(
+#include <unistd.h>
+#include <sys/times.h>
+,{clock_t a = times(0)/sysconf(_SC_CLK_TCK);},
+do_times=yes
+AC_DEFINE(HAVE_TIMES,1),
+do_times=no
+)
+AC_MSG_RESULT($do_times)
+
+# --
+# Look for a dl library to use. First look for the standard dlopen
+# functions, and failing that look for the HP specific shl_load function.
+
+AC_CHECK_HEADERS(dlfcn.h dl.h, break)
+
+DLLIB=''
+AC_CHECK_LIB(dl,dlopen,[DLLIB=-ldl])
+if test -z "$DLLIB" ; then
+AC_CHECK_LIB(dld,shl_load,[DLLIB=-ldld])
+fi
+AC_SUBST(DLLIB)
+
+AC_PROG_INSTALL
+
+AC_LANG_C
+AC_C_BIGENDIAN
+
+AC_CANONICAL_HOST
+# $host
+
+# The -fPIC flag is used to tell the compiler to make position
+# independent code. It is needed when making shared objects.
+
+AC_MSG_CHECKING("for flag to make position independent code")
+PICFLAG=-fPIC
+case "${host}" in
+
+     *-*-cygwin*)
+	PICFLAG=
+	;;
+
+     *-*-hpux*)
+	PICFLAG=+z
+	;;
+
+esac
+AC_SUBST(PICFLAG)
+AC_MSG_RESULT($PICFLAG)
+
+
+AX_LD_EXTRALIBS
+ 
+# Darwin requires -no-cpp-precomp
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+esac
+
+# The -rdynamic flag is used by iverilog when compiling the target,
+# to know how to export symbols of the main program to loadable modules
+# that are brought in by -ldl
+AC_MSG_CHECKING(for -rdynamic compiler flag)
+
+rdynamic=-rdynamic
+case "${host}" in
+
+    *-*-netbsd*)
+	rdynamic="-Wl,--export-dynamic"
+	;;
+
+    *-*-solaris*)
+	rdynamic=""
+	;;
+
+    *-*-cygwin*)
+	rdynamic=""
+	;;
+
+    *-*-hpux*)
+	rdynamic="-E"
+	;;
+
+    *-*-darwin*)
+	rdynamic="-Wl,-all_load"
+	strip_dynamic="-SX"
+	;;
+
+esac
+AC_SUBST(rdynamic)
+AC_MSG_RESULT($rdynamic)
+AC_SUBST(strip_dynamic)
+AC_MSG_RESULT($strip_dynamic)
+
+AC_MSG_CHECKING(for shared library link flag)
+shared=-shared
+case "${host}" in
+
+     *-*-cygwin*)
+        shared="-shared -Wl,--enable-auto-image-base"
+	;;
+
+     *-*-hpux*)
+	shared="-b"
+	;;
+
+     *-*-darwin1.[0123])
+	shared="-bundle -undefined suppress"
+	;;
+
+     *-*-darwin*)
+	shared="-bundle -undefined suppress -flat_namespace"
+	;;
+esac
+
+AC_SUBST(shared)
+AC_MSG_RESULT($shared)
+
+#######################
+## test for underscores. The vpi module loader needs to know this
+## in order to know the name of the start symbol for the .vpi module.
+#######################
+
+AX_C_UNDERSCORES_LEADING
+AX_C_UNDERSCORES_TRAILING
+
+#######################
+## end of test for underscores
+#######################
+
+AX_CPP_IDENT
+
+# If not otherwise specified, set the libdir64 variable
+# to the same as libdir.
+AC_MSG_CHECKING(for libdir64 path)
+if test x${libdir64} = x
+then
+	libdir64="${libdir}"
+fi
+AC_SUBST(libdir64)
+AC_MSG_RESULT(${libdir64})
+
+# where to put vpi subdirectories
+AC_MSG_CHECKING(for VPI subdirectories)
+if test x${vpidir1} = x
+then
+	vpidir1="."
+fi
+
+AC_SUBST(vpidir1)
+AC_SUBST(vpidir2)
+AC_MSG_RESULT(${vpidir1} ${vpidir2})
+
+AC_CONFIG_SUBDIRS(vpi vvp tgt-vvp tgt-fpga libveriuser cadpli)
+
+AC_OUTPUT(Makefile ivlpp/Makefile driver/Makefile driver-vpi/Makefile tgt-null/Makefile tgt-stub/Makefile tgt-verilog/Makefile tgt-pal/Makefile)

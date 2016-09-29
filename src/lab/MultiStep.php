@@ -188,7 +188,19 @@ d) Potential for back flow<br/><br/>
 By this time, specialty wheels of magnesium or aluminum alloy had come onto the market, and wheel covers were a cheap means of imitating the styling of those. Plastic wheel covers (known in the UK as wheel trims) appeared in the 1970s and became main stream in the 1980s. Plastic has largely replaced steel as the primary material for manufacturing hubcaps and trims, and where steel wheels are still used, the wheels are now generally painted black so the wheel is less visible through cutouts in the wheel trim. On modern automobiles, full-wheel hubcaps are most commonly seen on budget models and base trim levels, while upscale and performance-oriented models use alloy wheels. Modern aluminum alloy wheels generally use small removable center caps, similar in size to the earliest hubcaps.<br/><br/>
 <span class="blue">Method of Manufacturing:</span> It is constructed by stamping a blank from sheet metal. Windows spaced angularly about the cover defined by radially inwardly angled borders simulating depth are formed on the blank. A marginal circular periphery is formed into a peripheral flange. The front face of the wheel cover is machined on a numerically controlled lathe, such that the cutting tool closely follows the contour, to form fine spiral grooves simulating machine markings generally concentric about the center of the wheel, thereby exhibiting a machined finish. A retainer ring is mounted interiorly within the flange and the flange rolled there over to complete the assembly. This configuration provides a relatively inexpensive decorative wheel cover simulating a machined wheel. In the simulation an circular aluminum sheet is taken. In Step 1 the holes are punched over the sheet where as in step 2, the punching of windows of the hubcaps is taking place. After the operation is completed in Step-2 the wheel rim cover bowled using cold forging techniques in Step-3. Finally the curved edge of the wheel rim cover is trimmed over the lathes.
 <br/><br/><center><img src="images/WheelRimCover/Step1.png" alt="Wheel Rim Cover Step 1" width="500" height="300"/><br/>Step 1<br/><br/><img src="images/WheelRimCover/Step2.png" alt="Wheel Rim Cover Step 2" width="500" height="300"/><br/>Step-2<br/><br/><img src="images/WheelRimCover/Step3.png" alt="Wheel Rim Cover Step 3" width="500" height="300"/><br/>Step-3</center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

@@ -1,0 +1,42 @@
+Grammar
+
+    0 $accept: file $end
+
+    1 file: /* empty */
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+
+
+Nonterminals, with rules where they appear
+
+$accept (3)
+    on left: 0
+file (4)
+    on left: 1, on right: 0
+
+
+state 0
+
+    0 $accept: . file $end
+
+    $default  reduce using rule 1 (file)
+
+    file  go to state 1
+
+
+state 1
+
+    0 $accept: file . $end
+
+    $end  shift, and go to state 2
+
+
+state 2
+
+    0 $accept: file $end .
+
+    $default  accept

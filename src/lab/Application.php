@@ -28,7 +28,19 @@ The list mentioned below outlines some of the important areas of application of 
 5. Fittings used in the building industry, such as for doors and windows.<br/>
 6. Containers, such as metal boxes, cans and canisters.<br/><br/>
 <center><img src="images/MetalForming/Tools.jpg" width="800" height="400"><br/>Figure: Components manufactured using metal forming process.</center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

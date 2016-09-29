@@ -48,7 +48,19 @@ There are two basic types of rotary swaging machine, the standard (also known as
 <br/><br/><span class="blue">Firearms and ammunition:</span> In internal ballistics, swaging describes the process of the bullet entering the barrel and being squeezed to conform to the rifling. Most firearm bullets are made slightly larger than the inside diameter of the barrel, so that they are swaged to engage the rifling and form a tight seal upon firing.
 In ammunition manufacture, swaged bullets are bullets manufactured by swaging room temperature metals into a die to form it into the shape of a bullet. In contrast, swaged bullets, since they are formed at the temperature at which they will be used, can be formed in molds of the exact desired size. This means that swaged bullets are generally more precise than cast bullets. The swaging process also leads to fewer imperfections, since voids commonly found in casting would be pressed out in the swaging process. The swaging process in reference to cold flow of metals into bullets is the process not of squeezing the metals into smaller forms but rather pressing smaller thinner items to form into shorter and slightly wider shapes.
 Swaging is used to form unjacketed bullets, usually made of a mix of lead and some antimony to improve working properties (lead alone is usually too soft). Many reloading equipment manufacturers started by marketing both reloading and bullet swaging dies and equipment.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

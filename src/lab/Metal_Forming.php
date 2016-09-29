@@ -28,7 +28,19 @@ of the billet material, and<span class="blue"> HOT FORMING</span> i.e. billet he
 •The part geometry is of moderate complexity and the production volumes are large, so that tooling costs per unit product can be kept low (e.g., automotive applications) or<br><br>
 •The part properties and metallurgical integrity are extremely important (e.g., load carrying aircraft, jet engine, and turbine components) The design, analysis and optimization of 
 forming processes require: Engineering knowledge regarding metal flow, stresses and heat transfer.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

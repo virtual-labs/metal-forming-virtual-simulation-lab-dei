@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<debug_info>
+	<num_node_sets>2</num_node_sets>
+	<node_set>
+		<num_nodes>2</num_nodes>
+		<nodes>
+			<node_num>-99</node_num>
+		</nodes>
+		<nodes>
+			<node_num>-99</node_num>
+		</nodes>
+	</node_set>
+	<node_set>
+		<num_nodes>1</num_nodes>
+		<nodes>
+			<node_num>-99</node_num>
+		</nodes>
+	</node_set>
+</debug_info>

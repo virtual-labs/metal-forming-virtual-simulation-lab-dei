@@ -10,6 +10,6 @@ $db_host = "localhost";
 $db_user = "root";
 
 # Database password
-$db_password = "";
+$db_password = "newpassword";
 
 ?>

@@ -99,7 +99,19 @@ A ring test simulation will be preformed for two different friction shear factor
 non-isothermal, therefore heat transfer at the interface is considered<br>
 The simulations show how temperature and shear friction factor affect metal flow and ring geometry. Compared to isothermal, non-isothermal 
 deformation causes the level of friction to increase.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

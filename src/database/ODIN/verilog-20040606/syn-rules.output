@@ -1,0 +1,169 @@
+Terminals which are not used
+
+   S_ASSIGN_MEM
+   S_ASSIGN_MUX
+   S_ELSE
+
+
+Grammar
+
+    0 $accept: start $end
+
+    1 start: S_ALWAYS '@' '(' S_EVENT ')' S_ASSIGN ';'
+    2      | S_ALWAYS '@' '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' ';'
+    3      | S_INITIAL S_ASSIGN
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 1 2
+')' (41) 1 2
+';' (59) 1 2
+'@' (64) 1 2
+error (256)
+S_ALWAYS (258) 1 2
+S_ASSIGN (259) 1 2 3
+S_ASSIGN_MEM (260)
+S_ASSIGN_MUX (261)
+S_ELSE (262)
+S_EVENT (263) 1 2
+S_EXPR (264) 2
+S_IF (265) 2
+S_INITIAL (266) 3
+
+
+Nonterminals, with rules where they appear
+
+$accept (16)
+    on left: 0
+start (17)
+    on left: 1 2 3, on right: 0
+
+
+state 0
+
+    0 $accept: . start $end
+
+    S_ALWAYS   shift, and go to state 1
+    S_INITIAL  shift, and go to state 2
+
+    start  go to state 3
+
+
+state 1
+
+    1 start: S_ALWAYS . '@' '(' S_EVENT ')' S_ASSIGN ';'
+    2      | S_ALWAYS . '@' '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' ';'
+
+    '@'  shift, and go to state 4
+
+
+state 2
+
+    3 start: S_INITIAL . S_ASSIGN
+
+    S_ASSIGN  shift, and go to state 5
+
+
+state 3
+
+    0 $accept: start . $end
+
+    $end  shift, and go to state 6
+
+
+state 4
+
+    1 start: S_ALWAYS '@' . '(' S_EVENT ')' S_ASSIGN ';'
+    2      | S_ALWAYS '@' . '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' ';'
+
+    '('  shift, and go to state 7
+
+
+state 5
+
+    3 start: S_INITIAL S_ASSIGN .
+
+    $default  reduce using rule 3 (start)
+
+
+state 6
+
+    0 $accept: start $end .
+
+    $default  accept
+
+
+state 7
+
+    1 start: S_ALWAYS '@' '(' . S_EVENT ')' S_ASSIGN ';'
+    2      | S_ALWAYS '@' '(' . S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' ';'
+
+    S_EVENT  shift, and go to state 8
+
+
+state 8
+
+    1 start: S_ALWAYS '@' '(' S_EVENT . ')' S_ASSIGN ';'
+    2      | S_ALWAYS '@' '(' S_EVENT . ')' S_IF S_EXPR S_ASSIGN ';' ';'
+
+    ')'  shift, and go to state 9
+
+
+state 9
+
+    1 start: S_ALWAYS '@' '(' S_EVENT ')' . S_ASSIGN ';'
+    2      | S_ALWAYS '@' '(' S_EVENT ')' . S_IF S_EXPR S_ASSIGN ';' ';'
+
+    S_ASSIGN  shift, and go to state 10
+    S_IF      shift, and go to state 11
+
+
+state 10
+
+    1 start: S_ALWAYS '@' '(' S_EVENT ')' S_ASSIGN . ';'
+
+    ';'  shift, and go to state 12
+
+
+state 11
+
+    2 start: S_ALWAYS '@' '(' S_EVENT ')' S_IF . S_EXPR S_ASSIGN ';' ';'
+
+    S_EXPR  shift, and go to state 13
+
+
+state 12
+
+    1 start: S_ALWAYS '@' '(' S_EVENT ')' S_ASSIGN ';' .
+
+    $default  reduce using rule 1 (start)
+
+
+state 13
+
+    2 start: S_ALWAYS '@' '(' S_EVENT ')' S_IF S_EXPR . S_ASSIGN ';' ';'
+
+    S_ASSIGN  shift, and go to state 14
+
+
+state 14
+
+    2 start: S_ALWAYS '@' '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN . ';' ';'
+
+    ';'  shift, and go to state 15
+
+
+state 15
+
+    2 start: S_ALWAYS '@' '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' . ';'
+
+    ';'  shift, and go to state 16
+
+
+state 16
+
+    2 start: S_ALWAYS '@' '(' S_EVENT ')' S_IF S_EXPR S_ASSIGN ';' ';' .
+
+    $default  reduce using rule 2 (start)

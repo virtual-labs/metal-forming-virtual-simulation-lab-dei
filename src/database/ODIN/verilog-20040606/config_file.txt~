@@ -1,0 +1,10 @@
+-t:dll
+flag:syn-rules
+flag:cprop
+flag:nodangle
+flag:arch=stratix
+flag:gdb_spin_point=yes
+flag:lib=/root/Temp/ODIN/verilog-20040606/tgt-odin/tech_lib.xml
+flag:dynamic_debug_file=/root/Temp/ODIN/verilog-20040606/tgt-odin/dynamic_debug_file.xml
+flag:optimization_file=/root/Temp/ODIN/verilog-20040606/tgt-odin/optimization_file.xml
+out:temp.synthesized.v

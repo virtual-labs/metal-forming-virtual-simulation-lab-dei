@@ -61,7 +61,19 @@ assembled crankshafts. Every engine is different and has different requirements.
 In the given simulation of the crankshaft forming, the closed impression die forging process is used. In this process the upper half section of the crankshaft is impressed on the upper die while lower half of the crankshaft is impressed on the lower die. The material of the billet is chromium alloy steel. The initial temperature of the billet is 1100 0C .The billet is placed over lower die. The hydraulic press is used to deform the billet. The upper die with hydraulic press compresses the billet with very high force in downward direction and severely deform it. Due to high deforming force and  high billet temperature ,material starts deforming plastically and moves into the impressions  created in the upper and lower die. At the final height the billet is deformed into semi-finished crankshaft. Final shape is obtained after various heat treatment processes and machining of the semi-finished crankshaft.<br><br>
 <center><img src="images/CrankShaft/CrankShaftDie.jpg"><br><br>
 Figure: CrankShaft Dies and their arrangement</center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

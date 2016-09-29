@@ -133,6 +133,15 @@ SELF CHECK QUIZ - CRANKSHAFT FORMING</center><br>
 		$_SESSION['answer'] = $answers;
 		echo '<script language="javascript">window.location = "Ans_Crankshaft.php";</script>';
 	}
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
 ?>
 </center></form>
 </div></div>

@@ -1,0 +1,149 @@
+AC_INIT(Makefile.in)
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_CHECK_TOOL(STRIP, strip, true)
+
+AC_EXEEXT
+AC_SUBST(EXEEXT)
+
+# Combined check for Microsoft-related bogosities; sets WIN32 if found
+AX_WIN32
+
+AC_PROG_INSTALL
+
+# vvp32 is by default disabled
+#enable_vvp32=no
+AC_SUBST(enable_vvp32)
+
+AC_CHECK_HEADERS(malloc.h)
+
+AC_CHECK_SIZEOF(unsigned long long)
+AC_CHECK_SIZEOF(unsigned long)
+AC_CHECK_SIZEOF(unsigned)
+
+# --
+# Look for a dl library to use. First look for the standard dlopen
+# functions, and failing that look for the HP specific shl_load function.
+
+AC_CHECK_HEADERS(dlfcn.h dl.h, break)
+
+DLLIB=''
+AC_CHECK_LIB(dl,dlopen,[DLLIB=-ldl])
+if test -z "$DLLIB" ; then
+AC_CHECK_LIB(dld,shl_load,[DLLIB=-ldld])
+fi
+AC_SUBST(DLLIB)
+
+
+# Darwin requires -no-cpp-precomp
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+esac
+
+# The -fPIC flag is used to tell the compiler to make position
+# independent code. It is needed when making shared objects.
+
+AC_MSG_CHECKING("for flag to make position independent code")
+PICFLAG=-fPIC
+case "${host}" in
+
+     *-*-cygwin*)
+	PICFLAG=
+	;;
+
+     *-*-hpux*)
+	PICFLAG=+z
+	;;
+
+esac
+AC_SUBST(PICFLAG)
+AC_MSG_RESULT($PICFLAG)
+
+# The -rdynamic flag is used by iverilog when compiling the target,
+# to know how to export symbols of the main program to loadable modules
+# that are brought in by -ldl. VPI support requires this.
+AC_MSG_CHECKING("for -rdynamic compiler flag")
+
+rdynamic=-rdynamic
+case "${host}" in
+
+    *-*-netbsd*)
+	rdynamic="-Wl,--export-dynamic"
+	;;
+
+    *-*-solaris*)
+	rdynamic=""
+	;;
+
+    *-*-cygwin*)
+	rdynamic=""
+	;;
+
+    *-*-hpux*)
+	rdynamic="-E"
+	;;
+
+    *-*-darwin*)
+	rdynamic="-Wl,-all_load"
+	;;
+
+esac
+AC_SUBST(rdynamic)
+AC_MSG_RESULT($rdynamic)
+
+AC_MSG_CHECKING("for shared library link flag")
+shared=-shared
+case "${host}" in
+
+     *-*-cygwin*)
+        shared="-shared -Wl,--enable-auto-image-base"
+	;;
+
+     *-*-hpux*)
+	shared="-b"
+	;;
+
+     *-*-darwin1.[0123])
+	shared="-bundle -undefined suppress"
+	;;
+
+     *-*-darwin*)
+	shared="-bundle -undefined suppress -flat_namespace"
+	;;
+esac
+
+AC_SUBST(shared)
+AC_MSG_RESULT($shared)
+
+AX_LD_EXTRALIBS
+
+#######################
+## test for underscores. The vpi module loader in vvm needs to know this
+## in order to know the name of the start symbol for the .vpi module.
+#######################
+
+AX_C_UNDERSCORES_LEADING
+AX_C_UNDERSCORES_TRAILING
+
+#######################
+## end of test for underscores
+#######################
+
+AX_CPP_IDENT
+
+# where to put vpi subdirectories
+AC_MSG_CHECKING(for VPI subdirectories)
+if test x${vpidir1} = x
+then
+	vpidir1="."
+fi
+
+AC_SUBST(vpidir1)
+AC_SUBST(vpidir2)
+AC_MSG_RESULT(${vpidir1} ${vpidir2})
+
+AC_OUTPUT(Makefile)

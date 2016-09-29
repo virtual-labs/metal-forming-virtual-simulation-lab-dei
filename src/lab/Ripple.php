@@ -34,7 +34,19 @@ Bellows, welded or convoluted (formed) are used in a large number of industrial 
 Metal bellows are also found in space applications, providing reservoirs with potable water as well as accumulators to collect wastewater.
 There are two main types of metal bellows - formed and welded. Formed bellows are produced by a variety of processes, including cold forming (rolling), electroforming and hydroforming.
 Bellows tube or ripples are formed by combined process of bulging and collapsing. Initially the tube is pressed by hydraulic or mechanical press. In the initial step, the tube is bulged at several fixed equidistant locations. In the next step, it is compressed axially to crumple the bulge regions, thus bellows or ripples are formed. The material of the tube should be able to withstand large deformation during collapsing process. So in the simulation of tube ripple process mild steel is used.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

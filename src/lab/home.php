@@ -49,8 +49,6 @@ function disableDraggingFor(element) {
 <div id="header">
 <ul class="dropdown dropdown-horizontal">
 <?php
-//error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
-//error_reporting(E_ALL ^ E_WARNING ^ E_DEPRECATED);
 include("mainmenu.php");
 ?>
 </ul></div>
@@ -108,38 +106,6 @@ numerical simulations. In this lab animations of upsetting process, extrusion pr
 	$fp = fopen ("counter.txt", "w");
 	fwrite ($fp, $count_number);
 	fclose($fp);
-// IP Address Programming
-$time = @date('Y-m-d H:i:s');
-$Remote_IP = $_SERVER['REMOTE_ADDR'];
-//Database connection
-include("config.inc.php"); 
-global $db, $db_host, $db_user, $db_password;
-@$conn = mysql_connect($db_host,$db_user,$db_password);
-if (!$conn) {
-die("ERROR: " . mysql_error() . "\n");
-}
-mysql_select_db ($db);
-$dbip = mysql_query("select Counter,IP from ipaddress");
-while($IP=mysql_fetch_array($dbip))
-{
-if($Remote_IP===$IP['IP'])
-{
-if(!isset($_COOKIE["name"]))
-{
-$num=$IP['Counter']+1;
-}
-break;
-}
-else $num=1;
-}
-if($num>1)
-{
-mysql_query("UPDATE ipaddress SET Counter = '$num', Last_Visit = '$time' WHERE IP = '$Remote_IP'");
-}
-else
-{
-mysql_query("insert into ipaddress(Counter,IP,First_Visit,Last_Visit) values('1','$Remote_IP','$time','$time')");
-}	
 ?>
 </center></div>
 <div id="footer">

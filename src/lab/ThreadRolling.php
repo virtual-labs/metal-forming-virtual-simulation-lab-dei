@@ -69,7 +69,19 @@ Materials are limited to ductile materials because the threads are cold formed. 
 <span class="blue">planetary dies</span>: Planetary dies are used to mass produce threads up to 1 in (25 mm) in diameter.
 Not only is thread rolling very economical but the threads are excellent as to form and strength. The cold working contributes to increased strength, particularly at the critical root areas. There is less likelihood of surface defects(produced by machining), which can act as stress raisers.<br/>
 When considering the blank diameter tolerance, a change in blank diameter will affect the major diameter by an approximate ratio of 3 to 1. Production rates are usually three to five times faster than thread cutting.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

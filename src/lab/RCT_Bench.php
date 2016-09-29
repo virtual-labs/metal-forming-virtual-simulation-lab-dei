@@ -1097,7 +1097,16 @@ On the top left corner in the video, one can observe the simulation conditions. 
 On the top right side, simulation results show the Final Inner Diameter as 15.4 mm with decrease in Inner Diameter by 48.8% on 50% reduction in height. At the bottom, the graph between force on upper die vs pilot height is shown. The equivalent strain generated during the process can be compared with the help of the scale given on the left side.";
 }
 else print ("<script language='javascript'>alert('You are missing some parameters! Please try again.')</script>");
-}	
+}
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
 ?>
 </div> 
 <div id="footer">

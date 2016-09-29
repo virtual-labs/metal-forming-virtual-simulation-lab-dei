@@ -1,0 +1,44 @@
+AC_INIT(Makefile.in)
+
+AC_PROG_CC
+AC_CHECK_TOOL(STRIP, strip, true)
+AC_PROG_INSTALL
+
+AC_EXEEXT
+AC_SUBST(EXEEXT)
+
+# Combined check for Microsoft-related bogosities; sets WIN32 if found
+AX_WIN32
+
+# Darwin requires -no-cpp-precomp
+case "${host}" in
+    *-*-darwin*)
+	CPPFLAGS="-no-cpp-precomp $CPPFLAGS"
+	CFLAGS="-no-cpp-precomp $CFLAGS"
+	;;
+esac
+
+AC_MSG_CHECKING("for shared library link flag")
+shared=-shared
+EXTRALIBS=
+case "${host}" in
+     *-*-cygwin*)
+        shared="-shared -Wl,--enable-auto-image-base"
+	;;
+     *-*-hpux*)
+	shared="-b"
+	;;
+     *-*-darwin1.[0123])
+	shared="-bundle -undefined suppress"
+	;;
+     *-*-darwin*)
+	shared="-bundle -undefined suppress -flat_namespace"
+	;;
+esac
+AC_SUBST(shared)
+AC_MSG_RESULT($shared)
+
+AC_SUBST(shared)
+AC_SUBST(EXTRALIBS)
+
+AC_OUTPUT(Makefile)

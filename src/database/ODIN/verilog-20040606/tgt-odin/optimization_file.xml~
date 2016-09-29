@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<optimizations_on_off>
+	<comment> Unary Minus implementation </comment>
+	<optimization>yes</optimization>
+
+	<comment> Addition with constants </comment>
+	<optimization>yes</optimization>
+
+	<comment> Shrink adders based on 0 in LSB </comment>
+	<optimization>yes</optimization>
+
+	<comment> Look for multiliers with constants </comment>
+	<optimization>yes</optimization>
+
+	<comment> Shrink multipliers based on 0 MSB </comment>
+	<optimization>yes</optimization>
+
+	<comment> Find and combine A+B+1 or (0-A)+C = C-A </comment>
+	<optimization>yes</optimization>
+
+	<comment> Detect MN_X_MULT </comment>
+	<optimization>yes</optimization>
+
+	<comment> Detect MN_MAC </comment>
+	<optimization>yes</optimization>
+
+	<comment> Detect MN_MULT_ADD_PACK </comment>
+	<optimization>yes</optimization>
+
+	<comment> Collapse multiplexers in IF structures </comment>
+	<optimization>yes</optimization>
+
+	<comment> Common multiplexer signals joining </comment>
+	<optimization>yes</optimization>
+
+	<comment> State machine detection for one-hot encoding </comment>
+	<optimization>no</optimization>
+
+	<comment> FF register reset detection and enable detection </comment>
+	<optimization>yes</optimization>
+
+	<comment> Multiplexer mapping to DSP blocks </comment>
+	<optimization>no</optimization>
+
+	<comment> Create constant multiplexers </comment>
+	<optimization>yes</optimization>
+</optimizations_on_off>

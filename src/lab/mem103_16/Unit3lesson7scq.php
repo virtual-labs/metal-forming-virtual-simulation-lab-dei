@@ -1,0 +1,74 @@
+<?php session_start();
+ini_set("display_errors","Off");
+if($_SESSION['auth']!="rahulMEM103_2016swarupsharma")
+{
+header("location:mem103.php");
+}
+else
+{
+?>
+<!DOCTYPE HTML public "-w3c//dtd//xhtml 1.0 strict//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Manufacturing Processes-I</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
+<link href="css/mem.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background:#FFFFFF; margin:auto; width: 1024px; height:100%;">
+<div id="header">
+<br/>
+<b>MEM-103 Manufacturing Processes-I</b></div>
+<div>
+<table width="100%"><tr>
+<td width="40%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
+<td style="text-align:right;"><a href="Unit3lesson7.php" title="Lesson 7 Special Casting Processes (Expendable)">Lesson 7 Special Casting Processes (Expendable)</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
+</tr></table><br/></div>
+<div>
+<b>Lesson 7 Self-Check Questions</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit3/Lesson7/Unit3Lesson7scq.pdf" target="_blank" title="Download Self-Check Questions">Self-Check Questions Download</a><br/><br/>
+<b>1. Dump box and heated metal pattern are used in</b><br/> 
+a. investment casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. shell-mould casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. centrifugal casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. die casting.<br/><br/> 
+<b>2. The typical thickness of the shell in shell moulding process is approximately</b><br/> 
+a. 5 mm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. 10 mm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. 15 mm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. 20 mm.<br/><br/> 
+<b>3. For manufacturing precision investment castings the sand generally used is</b><br/> 
+a. Zircon sand &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Silica sand &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Chromite sand &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Olivine sand<br/><br/> 
+<b>4. For making vanes or blades of a turbine, the recommended method of casting is</b><br/> 
+a. Shell moulding &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Permanent moluld casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Precision investment casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Die casting<br/><br/> 
+<b>5. Permanent mould casting is also known as</b><br/> 
+a. corthias casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. gravity die casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. pressure die casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. slush casting.<br/><br/> 
+<b>6. An expendable mould casting process that employs single-use pattern is</b><br/> 
+a. Investment casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Plaster mould casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Ceramic mould casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Die casting<br/><br/> 
+<b>7. Compared to many casting processes, the dimensional accuracy and surface finish of the parts produced by sand casting process is</b><br/> 
+a. poor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. good &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. very good &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. excellent<br/><br/> 
+<b>8. In investment casting, the pattern is made of</b><br/> 
+a. wax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. plastics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. plaster of paris &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. ceramics<br/><br/> 
+<b>9. Precision casting is another name used for</b><br/>
+a. shell-mould casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. centrifugal casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. investment casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. permanent mould casting.<br/><br/> 
+<b>10. Refractory slurry is used in</b><br/>
+a. shell-mould casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. centrifugal casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. investment casting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. die casting.<br/><br/>
+<b>Possible answers to self check questions</b><br/><br/>
+<table border=0 width="200px">
+<tr><td>1.</td><td>b&nbsp;&nbsp;&nbsp;&nbsp;</td><td>2.</td><td>b</td></tr>
+<tr><td>3.</td><td>a</td><td>4.</td><td>c</td></tr>
+<tr><td>5.</td><td>b</td><td>6.</td><td>a</td></tr>
+<tr><td>7.</td><td>a</td><td>8.</td><td>a</td></tr>
+<tr><td>9.</td><td>c</td><td>10.</td><td>c</td></tr>
+</table>
+</div><br/>
+<div id="footer">
+&copy; MEM103 - Dayalbagh Educational Institute (www.dei.ac.in)</div>
+</body>
+</html>
+<?php
+}
+ 	//Opening file to get counter value
+	$fp = fopen ("../counter.txt", "r");
+	$count_number = fread ($fp, filesize ("../counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("../counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>

@@ -44,7 +44,19 @@ Transverse Wedge Rolling is a process in which a round billet is inserted betwee
 <center><img src="images/Rolling/WedgeRolling/PlanetaryRolls.jpg" width="350" height="380" alt="Transverse Wedge Rolling using planetary rolls"><br/>Figure 1: Transverse Wedge Rolling using planetary rolls<br/><br/>
 <img src="images/Rolling/WedgeRolling/ThreeRolls.jpg" width="370" height="380" alt="Transverse Wedge Rolling using three rolls"><br/>Figure 2: Transverse Wedge Rolling using three rolls
 </center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

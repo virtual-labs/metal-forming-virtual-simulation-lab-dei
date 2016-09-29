@@ -362,7 +362,19 @@ Since the power is defined as the <span class ="blue">rate of doing work</span>,
 W&nbsp;&nbsp;=&nbsp;&nbsp;4&pi;aPN</center><br>
 where P is in Newton and a is in meters<br><br>
 <center><img src="images/Rolling/r20.jpg" height="300" width="350"></center>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

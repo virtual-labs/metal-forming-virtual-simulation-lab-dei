@@ -59,7 +59,19 @@ A major source of engine wear is the sideways force exerted on the piston throug
 <br><span class="blue">Compound rods:</span> Many-cylinder multi-bank engines such as a V12 layout have little space available for many connecting rod journals on a limited length of crankshaft. This is a difficult compromise to solve and its consequence has often led to engines being regarded as failures.
 The simplest solution, almost universal in road car engines, is to use simple rods where cylinders from both banks share a journal. This requires the rod bearings to be narrower, increasing bearing load and the risk of failure in a high-performance engine. This also means the opposing cylinders are not exactly in line with each other.
 In certain engine types, master/slave rods are used rather than the simple type. The master rod carries one or more ring pins to which are bolted the much smaller big ends of slave rods on other cylinders. Certain designs of V engines use a master/slave rod for each pair of opposite cylinders. A drawback of this is that the stroke of the subsidiary rod is slightly shorter than the master, which increases vibration in a v engine, catastrophically so for the Sunbeam Arab. Radial engines typically have a master rod for one cylinder and multiple slave rods for all the other cylinders in the same bank. The usual solution for high-performance aero-engines is a "forked" connecting rod. One rod is split in two at the big end and the other is thinned to fit into this fork. The journal is still shared between cylinders. The Rolls-Royce Merlin used this "fork-and-blade" style.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

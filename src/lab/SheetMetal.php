@@ -238,7 +238,19 @@ Thickness: 0.76 mmto 1.5 mm<br/>Colours: Clear, Opal, Bronze, Grey, Green, Blue,
 <center><img src="images/CorrugatedSheet/Sheet1.png" alt="Corrugated Sheet Ajay Kant Upadhyay" height="220" width="240"><br/><img src="images/CorrugatedSheet/Sheet2.png" alt="Corrugated Sheet Ajay Kant Upadhyay"></center><br/>
 Teeth distance id as 5 mm<br/>
 Teeth height is as 6 mm
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

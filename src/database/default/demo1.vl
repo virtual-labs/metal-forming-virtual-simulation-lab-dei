@@ -1,0 +1,25 @@
+//Asynchronous reset D- Flip Flop...
+
+
+// Device : Spartan 3E(XC3S500e-4fg320) @ 50 MHz
+// Generated on : Thu May 02 23:41:29 IST 2013
+module dff_async(clk,reset,q);
+ //-----------Input Ports---------------
+input clk, reset ; 
+ //-----------Output Ports---------------
+output [5:0] q;
+reg [5:0] data;
+//------------Internal Variables--------
+ reg [5:0] q;
+initial
+begin
+data=6'b010101;
+end
+//-------------Code Starts Here---------
+always @ ( posedge clk or negedge reset)
+if (reset) begin
+q <= 1'b0;
+end  else begin
+q <= data;
+end
+endmodule //End Of Module dff_async_reset

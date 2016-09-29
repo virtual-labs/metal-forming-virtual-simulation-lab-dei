@@ -22,7 +22,19 @@ include("mainmenu.php");
 <h2>Motivation</h2><br>
 Metal forming is one of the most important production technologies in modern industry.It has a special place because it helps to produce parts of superior mechanical properties with minimum waste of material.
 Parts manufactured by this process find application in the automotive, aircraft, railroad and mining industries.There is a need to enhance forging activity in India.
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

@@ -1,0 +1,128 @@
+#
+#    This source code is free software; you can redistribute it
+#    and/or modify it in source code form under the terms of the GNU
+#    Library General Public License as published by the Free Software
+#    Foundation; either version 2 of the License, or (at your option)
+#    any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Library General Public License for more details.
+#
+#    You should have received a copy of the GNU Library General Public
+#    License along with this program; if not, write to the Free
+#    Software Foundation, Inc.,
+#    59 Temple Place - Suite 330
+#    Boston, MA 02111-1307, USA
+#
+#ident "$Id: Makefile.in,v 1.54 2004/03/11 06:06:59 steve Exp $"
+#
+#
+SHELL = /bin/sh
+
+VERSION = 0.0
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+srcdir = @srcdir@
+
+VPATH = $(srcdir)
+
+bindir = @bindir@
+libdir = @libdir@
+includedir = $(prefix)/include
+
+vpidir = $(libdir)/ivl/@vpidir1@
+
+strip_dynamic=@strip_dynamic@
+
+CC = @CC@
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+
+CPPFLAGS = @ident_support@ -I. -I$(srcdir)/.. -I$(srcdir) -I.. @file64_support@ @CPPFLAGS@ @DEFS@ @PICFLAG@
+CFLAGS = -Wall @CFLAGS@
+LDFLAGS = @LDFLAGS@
+STRIP = @STRIP@
+
+ifeq (@enable_vvp32@,yes)
+vpidir32 = $(libdir)/ivl/@vpidir2@
+ALL32 = all32
+INSTALL32 = install32
+UNINSTALL32 = uninistall32
+endif
+
+all: dep system.vpi $(ALL32)
+
+dep:
+	mkdir dep
+
+%.o: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -MD -c $< -o $*.o
+	mv $*.d dep
+
+O = sys_table.o sys_convert.o sys_deposit.o sys_display.o sys_fileio.o \
+sys_finish.o sys_plusargs.o sys_random.o sys_readmem.o sys_readmem_lex.o \
+sys_time.o sys_vcd.o sys_vcdoff.o vcd_priv.o mt19937int.o priv.o stringheap.o
+
+ifeq (@HAVE_LIBZ@,yes)
+O += sys_lxt.o lxt_write.o sys_lxt2.o lxt2_write.o
+endif
+
+LIBS = @LIBS@
+SYSTEM_VPI_LDFLAGS = $(LIBS)
+ifeq (@WIN32@,yes)
+    SYSTEM_VPI_LDFLAGS += @EXTRALIBS@
+endif
+
+system.vpi: $O ../vvp/libvpi.a
+	$(CC) @shared@ -o $@ $O -L../vvp $(LDFLAGS) -lvpi $(SYSTEM_VPI_LDFLAGS)
+
+sys_readmem_lex.c: sys_readmem_lex.lex
+	flex -t -Preadmem $(srcdir)/sys_readmem_lex.lex > sys_readmem_lex.c
+
+ifeq (@enable_vvp32@,yes)
+
+all32: bin32 bin32/system.vpi
+
+bin32:
+	mkdir bin32
+
+bin32/%.o: %.c
+	$(CC) -m32 $(CPPFLAGS) $(CFLAGS) -MD -c $< -o $@
+
+bin32/system.vpi: $(addprefix bin32/,$O)
+	$(CC) -m32 @shared@ -o $@ $(addprefix bin32/,$O) -L../vvp/bin32 $(LDFLAGS) -lvpi $(SYSTEM_VPI_LDFLAGS)
+
+install32: all32 $(vpidir32)/system.vpi
+
+$(vpidir32)/system.vpi: bin32/system.vpi
+	$(INSTALL_PROGRAM) bin32/system.vpi $(vpidir32)/system.vpi
+	$(STRIP) $(strip_dynamic) $(vpidir32)/system.vpi
+
+uninstall32:
+	rm -f $(vpidir32)/system.vpi
+endif
+
+clean:
+	rm -rf *.o sys_readmem_lex.c dep system.vpi
+
+distclean: clean
+	rm -f Makefile
+
+install: all installdirs $(vpidir)/system.vpi $(INSTALL32)
+
+$(vpidir)/system.vpi: ./system.vpi
+	$(INSTALL_PROGRAM) ./system.vpi $(vpidir)/system.vpi
+	$(STRIP) $(strip_dynamic) $(vpidir)/system.vpi
+
+installdirs: ../mkinstalldirs
+	$(srcdir)/../mkinstalldirs $(vpidir)
+
+uninstall: $(UNINSTALL32)
+	rm -f $(vpidir)/system.vpi
+
+
+-include $(patsubst %.o, dep/%.d, $O)

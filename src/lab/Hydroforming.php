@@ -67,7 +67,19 @@ Sheet hydroforming is similar to the normal deep drawing process, except for the
 These factors increase the drawing limit ratio. As a result, it allows forming to be carried out in one process while the normal deep drawing method requires two or more processes.
 <br/><br/>References:<br/>
 [1] Nico Langerak, Dinesh Kumar Rout, Rahul Verma, G.Manikandan, Arunansu, Haldar, “Tube Hydroforming in Automotive Applications”.<br/>
-</div></div> 
+</div>
+<?php
+ 	//Opening file to get counter value
+	$fp = fopen ("counter.txt", "r");
+	$count_number = fread ($fp, filesize ("counter.txt"));
+	fclose($fp);
+	$counter = (int)($count_number) + 1;
+    $count_number = (string)($counter);
+	$fp = fopen ("counter.txt", "w");
+	fwrite ($fp, $count_number);
+	fclose($fp);
+?>
+</div> 
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

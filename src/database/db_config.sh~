@@ -1,0 +1,12 @@
+apt-get -q -y install mysql-server
+
+mysqladmin -u root password newpassword
+
+DATABASE_NAME="virtuallab"
+
+mysql -u root -Bse "create database $DATABASE_NAME;"
+mysql -u root -Bse "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'newpassword' WITH GRANT OPTION;"
+
+mkdir /usr/local/Temp
+chmod -R 777 /usr/local/Temp
+cp mysql.sql /usr/local/Temp
