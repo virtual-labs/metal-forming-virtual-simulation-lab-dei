@@ -1,7 +1,12 @@
+<?php 
+session_start();
+ini_set("display_errors","Off");
+?>
 <!DOCTYPE HTML public "-w3c//dtd//xhtml1.0 strict//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml1">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Virtual Lab-Dayalbagh Educational Institute</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
@@ -12,17 +17,6 @@ font-size: 16px;
 line-height: 18px;
 }
 </style>
-<SCRIPT language="javascript">
-msg = "Virtual Lab - Dayalbagh Educational Institute ";
-msg = msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
-</SCRIPT>
 <script language="javascript">
 <!-- 
 var isNS = (navigator.appName == "Netscape") ? 1 : 0;
@@ -108,7 +102,7 @@ include("mainmenu.php");
 <div style="padding-left:35px;">
 <center><br/><b style="font-size:1.6em; color:#ff00ff; text-decoration:underline">Metal Forming Virtual Simulation Lab - Feedback</b>
 <div style="font-family:arial; font-size:2em; color:#ff0000;" id="message"></div></center><br>
-<FORM name="feedbackform" METHOD="post" onSubmit="return validation()" action="feedback.php">
+<FORM name="feedbackform" METHOD="post" onSubmit="return validation()">
 <table>
 <tr>
 <td>A) Name:<img src="images/arsterix.gif"></td>
@@ -116,16 +110,13 @@ include("mainmenu.php");
 <td></td></tr>
 <tr>
 <td>B) College/Company with place:<img src="images/arsterix.gif"></td>
-<td><input type="text" size="50px" name="deptName"></td><td>&nbsp;&nbsp;&nbsp;</td>
-</tr>
+<td><input type="text" size="50px" name="deptName"></td></tr>
 <tr>
 <td>C) Class with Semester / Designation:<img src="images/arsterix.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-<td><input type="text" name="class" size="50"></td><td>&nbsp;&nbsp;&nbsp;</td>
-</tr>
+<td><input type="text" name="class" size="50"></td></tr>
 <tr>
 <td>D) Email ID:<img src="images/arsterix.gif"></td>
-<td><input type="text" name="email" size="50"></td><td>&nbsp;&nbsp;&nbsp;</td>
-</tr>
+<td><input type="text" name="email" size="50"></td></tr>
 </table><br />
 <table border="0"><tr>
 <td>Please put forward your opinion by electing any one :</td>
@@ -198,8 +189,19 @@ include("mainmenu.php");
 
 <tr><td><p>&nbsp;</p>10) Specify problems/difficulties you faced and Give interesting things<br> about the simulations.</td>
 <td colspan="5"><input type="text" name="formtext" style="width :350px; height:30px; border-style:solid; border-color:#98bf21;" maxlength="500"></td>
-</tr></table>
-<center><input type="submit" name="send" value="Submit">
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td><label for="securitycode">Security Code<img src="images/arsterix.gif"></label></td>
+<td><input id="securitycode" name="securitycode" type="text" size="11"/></td>
+<td colspan="3" style="font-size:18px; color:red; text-decoration:blink;">&nbsp;<span id="info"></span></td></tr>
+
+<tr><td></td><td>
+<img src="captcha.php" id="captcha_security" />&nbsp;&nbsp;&nbsp;
+<a href="#" onclick="document.getElementById('captcha_security').src='captcha.php?'+Math.random();" id="change-captcha">
+<img src="images/refresh_icon.jpg" height="25" width="25" title="Refresh"></a></td></tr>
+</table>
+<center>
+<input type="submit" name="send" value="Submit">
 <input type="button" name="reset_form" value="Reset Form" onclick="this.form.reset();"></center>
 </FORM>
 <?php
@@ -213,13 +215,7 @@ die("ERROR: " . mysql_error() . "\n");
 mysql_select_db ($db);
 if (isset($_POST['send']))
 {
-if($_POST['email']===""){
-//echo ("<script language='javascript'>alert('Please enter your email')</script>");
-echo '<script language="javascript">window.location="feedback.php";</script>';
-return false;
-}
-else
-{
+if( $_SESSION['code'] == $_POST['securitycode'] ) {
 //Inserting values in the database
 $query="insert into feedback(Name,Institute,Class,Email,Objective,Process,Analysis,Notes,Understand,Motivate,Interface,Compare,Scope,About,DateTime)
 values('".$_POST["name"]."','".$_POST["deptName"]."','".$_POST["class"]."',
@@ -234,11 +230,14 @@ $subject="Feedback for Metal Forming Virtual Simulation Lab";
 $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'From: ' . "\r\n";
-$message="Name=".$_POST["name"]."<br/>Institute=".$_POST["deptName"]."<br/>Class=".$_POST["class"]."<br/>Email ID=".$_POST["email"]."<br/><br/>Feedback:<br/>".$_POST["formtext"];
+$message="Name=".$_POST["name"]."<br>Institute=".$_POST["deptName"]."<br/>Class=".$_POST["class"]."<br/>Email ID=".$_POST["email"]."<br/><br/>Feedback:<br/>".$_POST["formtext"];
 @mail($to,$subject,$message,$headers);
 @mail($_POST["email"],"Welcome","Thankyou for sending feedback. Metal Forming Virtual Simulation Lab heartly welcomes you. You can give your valuable suggestions to make interactive simulations on real time forming experiments.",$headers);
-echo '<script language="javascript">window.location="acknowledgement.php";</script>';
-}}
+echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Thankyou, your feedback has been submitted');</SCRIPT>");
+}
+else echo "<script language=\"javascript\">document.getElementById('info').innerHTML=\"Invalid Security Code\"</script>";
+unset($_SESSION['code']);
+}
  	//Opening file to get counter value
 	$fp = fopen ("counter.txt", "r");
 	$count_number = fread ($fp, filesize ("counter.txt"));

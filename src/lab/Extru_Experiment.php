@@ -64,7 +64,8 @@ $value = $_SERVER['QUERY_STRING'];
 //$plist=array_pop( explode('/', $value) );
 $plist = basename($_SERVER['REQUEST_URI']);
 print <<<EOQ
-<iframe width="1020" height="600" src=$value?rel=0&autoplay=1&loop=1&playlist=$plist frameborder="0" allowfullscreen></iframe>
+<iframe width="1020" height="600" src=$value?rel=0&loop=1&playlist=$plist frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 EOQ;
 if(!empty($speech)){
 ?>

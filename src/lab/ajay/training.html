@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Training - Ajay Kant Upadhyay</title>
+<link rel="shortcut icon" type="image/x-icon" href="image/icon.ico">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/modal.css" rel="stylesheet" type="text/css">
+<script src="css/jquery.js"></script>
+<SCRIPT language="javascript">
+msg = "Qualification - Ajay Kant Upadhyay ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+<!-- 
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  function mischandler(){
+   return false;
+ }
+  function mousehandler(e){
+ 	var myevent = (isNS) ? e : event;
+ 	var eventbutton = (isNS) ? myevent.which : myevent.button;
+    if((eventbutton==2)||(eventbutton==3)) return false;
+ }
+ document.oncontextmenu = mischandler;
+ document.onmousedown = mousehandler;
+ document.onmouseup = mousehandler;
+ 
+window.onload = init; 
+function init() {
+  disableDraggingFor(document.getElementById("draggingDisabled"));
+} 
+function disableDraggingFor(element) {
+  // this works for FireFox and WebKit in future according to http://help.dottoro.com/lhqsqbtn.php
+  element.draggable = false;
+  // this works for older web layout engines
+  element.onmousedown = function(event) {
+                event.preventDefault();
+                return false;
+};
+}
+-->
+</script>
+</head>
+<body>
+<div id="container">
+<a href="http://www.vlab.co.in/institute_detail.php?ins=010" target="_blank"><img src="image/vlabLogo.jpg" class="index" /></a>
+<div id="head" >
+<table width="792" height="155">
+<tr>
+<td><a href="index.html"><img src="image/ajay.jpg" width="162" height="145" /></a></td>
+<td class="name"><span class="w">Ajay Kant Upadhyay</span><br />
+Faculty of Engineering,<br>DayalBagh Educational Institute,<br>Dayalbagh, Agra<br>Uttar Pradesh - 282 005</td>
+</tr>
+</table>
+</div>
+<div id="menu">
+ <ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="aboutme.html">About Me</a></li>
+<li><a href="qualification.html">Qualification</a></li>
+<li class="current_page_item"><a href="training.html">Training</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="assignment.html">Assignment</a></li>
+<li><a href="certificate.html">Certificates</a></li>
+<li><a href="project.html">Project</a></li>
+<li><a href="gallery/gallery.html">Gallery</a></li>
+<li><a href="http://www.vlab.co.in" target="_blank">VLab</a></li>
+</ul>
+</div>
+<div class="list">
+<p class="color">TRAININGS:</p>
+<div>
+<table align="center" border="0">
+<tr><td class="pad zoomin frame"><a href="#" data-modal-id="popup1"><img src="image/Certificates/BootCamp.jpg" width="150" height="120" title="Virtual Lab Boot Camp 2019 at Gujrat University"><br />
+Boot Camp</a></td>
+<td class="pad zoomin frame"><a href="#" data-modal-id="popup2"><img src="image/Certificates/3D.jpg" width="120" height="150" title="Training on 3D Printer Technologies & Firmware Installation in 2017 at Mumbai"><br />
+3D Printer</a></td>
+</tr></table></div>
+
+<div id="popup1" class="modal-box">
+<a href="#" class="js-modal-close close" title="close">x</a>
+  <div class="modal-body">
+    <img src="image/Certificates/BootCamp.jpg" width="500" height="600">
+  </div>
+</div>
+
+<div id="popup2" class="modal-box">
+<a href="#" class="js-modal-close close" title="close">x</a>
+  <div class="modal-body">
+    <img src="image/Certificates/3D.jpg" width="500" height="600">
+  </div>
+</div>
+
+<ul>
+<li>1. Five days training in <a href="#" data-modal-id="popup1"><b><u>Virtual Lab Boot Camp</u></b></a> at Gujrat University, Ahmedabad from January 09, 2019 to January 13, 2019.</li><br />
+<li>2. Seven days training on <a href="#" data-modal-id="popup2"><b><u>3D Printer Technologies & Firmware Installation</u></b></a> in SoftTact Technologies, Mumbai from March 29, 2017 to April 04, 2017.</li><br />
+<li>3. Two days training on <b>College Cloud Edition Workshop</b> in IIIT Hyderabad from March 15, 2017 to March 16, 2017.</li><br />
+<li>4. Three days training for <b>Quality Assurance and Testing on Github</b> in IIIT Hyderabad from February 3, 2016 to February 5, 2016.</li><br />
+<li>5. Three weeks training for <b>Website Integration and Hosting on Github</b> at IIIT Hyderabad in January 2015.</li><br />
+<li>6. Three days training on <b>Bazaar Version Control System</b> at IIT Delhi in November 2012.</li><br />
+<li>7. Three days training on <b>Bazaar Version Control System</b> at IIIT Hyderabad in October 2012.</li><br />
+</ul>
+
+</div>
+</div>
+<script>
+$(function(){
+var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+	$('a[data-modal-id]').click(function(e) {
+		e.preventDefault();
+    $("body").append(appendthis);
+    $(".modal-overlay").fadeTo(500, 0.7);
+    //$(".js-modalbox").fadeIn(500);
+		var modalBox = $(this).attr('data-modal-id');
+		$('#'+modalBox).fadeIn($(this).data());
+	});  
+  
+$(".js-modal-close, .modal-overlay").click(function() {
+    $(".modal-box, .modal-overlay").fadeOut(500, function() {
+        $(".modal-overlay").remove();
+    });
+});
+ 
+$(window).resize(function() {
+    $(".modal-box").css({
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+    });
+});
+$(window).resize();
+});
+</script>
+</body>
+</html>

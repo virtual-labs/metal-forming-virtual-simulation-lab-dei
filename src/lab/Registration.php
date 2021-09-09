@@ -1,3 +1,7 @@
+<?php 
+session_start();
+ini_set("display_errors","Off");
+?>
 <!DOCTYPE HTML public "-w3c//dtd//xhtml1.0 strict//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml1">
 <head>
@@ -7,17 +11,6 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
 <link href="css/advanced.css" media="all" rel="stylesheet" type="text/css" />
-<SCRIPT language="javascript">
-msg = "Virtual Lab - Dayalbagh Educational Institute ";
-msg = msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
-</SCRIPT>
 <script language="javascript">
 <!-- 
 var isNS = (navigator.appName == "Netscape") ? 1 : 0;
@@ -137,7 +130,6 @@ function hidefield() {
 <div id="header">
 <ul class="dropdown dropdown-horizontal">
 <?php
-ini_set("display_errors","Off");
 include("mainmenu.php");
 ?>
 </ul></div>
@@ -163,7 +155,7 @@ You will be taken to the respective providers website and our website will never
 We use the name and email address that provider gives us to set up your account. 
 We hate spam as much as you do and will never ever share your email with a third party service.</td>
 <td><center><table border=0>
-<form id="form1" name="form1" method="Post" action="Signin.php" onsubmit="return validation();">
+<form id="form1" name="form1" method="Post" onsubmit="return validation();">
 
 <tr><td style="font-size:15px;">First Name<img src="images/arsterix.gif"></td><td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
 <td><input type="text" name="fname" size="25" /></td></tr>
@@ -434,14 +426,66 @@ We hate spam as much as you do and will never ever share your email with a third
 <option value="otherCountry">Other Country</option></select><br/>
 <input type="text" id="CountryTextbox" name="CountryTextbox"  size="25" /></td></tr>
 
-<tr><td><p>&nbsp;</p></td></tr>
-<tr><td></td><td></td><td>
+<tr><td style="font-size:15px;"><label for="securitycode">Security Code<img src="images/arsterix.gif"></label></td><td>&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+<td><input id="securitycode" name="securitycode" type="text" /></td></tr>
 
+<tr><td></td><td></td><td>
+<img src="captcha.php" id="captcha_security" />&nbsp;&nbsp;&nbsp;
+<a href="#" onclick="document.getElementById('captcha_security').src='captcha.php?'+Math.random();" id="change-captcha">
+<img src="images/refresh_icon.jpg" height="25" width="25" title="Refresh"></a></td></tr>
+
+<tr><td></td><td></td><td style="font-size:18px; color:red; text-decoration:blink;">&nbsp;<span id="info"></span></td></tr>
+
+<tr><td></td><td></td><td>
 <input type="submit" name="Registration" value="Register" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="reset" name="Clear" value="Clear" onclick="this.form.reset();" /></td></tr>
 </form></table></center></td></tr></table></center>
-</div>
 <?php
+	include("config.inc.php");
+	$date = @date('Y-m-d H:i:s');
+	$user=$_POST["fname"]."&nbsp;".$_POST["lname"];
+	$pwd=trim($_POST["password"]);
+	
+	global $db, $db_host, $db_user, $db_password;
+	$conn = mysql_connect($db_host,$db_user,$db_password);
+	if (!$conn) {
+	die("ERROR: " . mysql_error() . "\n");
+	}
+	mysql_select_db($db);
+	
+if(isset($_POST['Registration']))
+{
+	if( $_SESSION['code'] == $_POST['securitycode'] ) {
+	$dquery=mysql_query("select Email from registration");
+	while($dv=mysql_fetch_array($dquery))
+	{
+	if($dv["Email"]===$_POST["email"])
+	{
+	echo ("<SCRIPT LANGUAGE='JavaScript'>alert('You have already registered in Metal Forming Virtual Simulation Lab');</SCRIPT>");
+	$f=0;
+	exit;
+	}
+	else $f=1;
+	}
+	if($f===1)
+	{
+	$query="insert into registration(Fname,Lname,Email,Password,Profession,College,State,Country,Date) 
+	values('".$_POST["fname"]."','".$_POST["lname"]."','".$_POST["email"]."','".$pwd."',
+	'".$profession."','".$_POST["college"]."','".$_POST["state"]."','".$country."','".$date."')";
+	mysql_query($query);
+
+//Sending an automatic email
+$headers = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= 'From: ' . "\r\n";
+$message="Welcome,&nbsp;".$user.".&nbsp;Your registration is successful in Metal Forming Virtual Simulation Lab.<br>Your Email ID:&nbsp;".$_POST["email"]."<br/>Password:&nbsp;".$pwd;
+@mail($_POST["email"],"Registration",$message,$headers);
+echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Thankyou for registration');</SCRIPT>");
+}
+}
+else echo "<script language=\"javascript\">document.getElementById('info').innerHTML=\"Invalid Security Code\"</script>";
+unset($_SESSION['code']);
+}
  	//Opening file to get counter value
 	$fp = fopen ("counter.txt", "r");
 	$count_number = fread ($fp, filesize ("counter.txt"));
@@ -452,7 +496,7 @@ We hate spam as much as you do and will never ever share your email with a third
 	fwrite ($fp, $count_number);
 	fclose($fp);
 ?>
-</div>
+</div></div>
 <div id="footer">
 &copy; Metal Forming Virtual Simulation Lab - Dayalbagh Educational Institute (www.dei.ac.in)
 </div>

@@ -22,7 +22,7 @@ include("mainmenu.php");
 $value = $_SERVER['QUERY_STRING'];
 $plist=array_pop( explode('/', $value) );
 print <<<EOQ
-<iframe width="1020" height="600" src=$value?rel=0&autoplay=1&loop=1&playlist=$plist frameborder="0" allowfullscreen></iframe>
+<iframe width="1020" height="600" src=$value?rel=0;&autoplay=1&loop=1&playlist=$plist frameborder="0" allowfullscreen></iframe>
 EOQ;
 if(stristr($value,BptbUcB14wg))
 {

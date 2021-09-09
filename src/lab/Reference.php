@@ -2,12 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Virtual Lab-Dayalbagh Educational Institute</title>
 <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/dropdown.css" media="all" rel="stylesheet" type="text/css" />
 <link href="css/advanced.css" media="all" rel="stylesheet" type="text/css" />
-<script language="javascript">
+<SCRIPT language="javascript">
+msg = "Virtual Lab - Dayalbagh Educational Institute ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG(); 
 <!-- 
 var isNS = (navigator.appName == "Netscape") ? 1 : 0;
   if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
@@ -60,14 +68,23 @@ include("mainmenu.php");
   ga('send', 'pageview');
 </script>
 <div style="background-image:url(images/content_bg.jpg);position: relative; margin:auto; width: 1024px; min-height:550px;">
-<center><br/><img src="images/MetalForming/References.jpg" width="900"></center>
+<br/><center style="font-size:24px; color:blue; font-weight:bold">REFERENCES</center>
+<p style="margin:50px; margin-top:20px; font-size:21px">
+1. Lange, K., "Handbook of Metal Forming", McGraw-Hill, 1985.<br/><br/>
+2. ASM Handbook, Ninth Edition, "Forming and Forging", Volume 14,1988.<br/><br/>
+3. Shiro Kobayashi, Soo-Ik Oh, Taylan Alton "Metal Forming and the Finite Element Method" Oxford University Press, USA, 1989.<br/><br/>
+4. Serope Kalpakjian and Steven Schmid, "Manufacturing Engineering and Technology", Pearson Education, 2009.<br/><br/>
+5. Amitabha Ghosh and A. K. Mallik, "Manufacturing Science", Affiliated East-West Press, 2009.<br/><br/>
+6. R. H. Wagoner and J. L. Chenot, "Metal forming analysis", Cambridge University Press, Cambridge, 2001.<br/><br/>
+7. Taylan Alton, Gracious Ngaile, Gangshu Shen, "Cold and hot forging: fundamentals and applications", Volume 1, ASM International, 2004.<br/><br/>
+8. FORGE: User Manual, Transvalor Inc., Sophia Antipolis, France.</p>
 <?php
- 	//Opening file to get counter value
+//Opening file to get counter value
 	$fp = fopen ("counter.txt", "r");
 	$count_number = fread ($fp, filesize ("counter.txt"));
 	fclose($fp);
 	$counter = (int)($count_number) + 1;
-    $count_number = (string)($counter);
+   	$count_number = (string)($counter);
 	$fp = fopen ("counter.txt", "w");
 	fwrite ($fp, $count_number);
 	fclose($fp);

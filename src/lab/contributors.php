@@ -44,23 +44,23 @@ include("mainmenu.php");
 <a style="font-size:0.8em;" href="#" onClick="window.open('http://www.dei.ac.in');" title="Dayalbagh Educational Institute"><u>(www.dei.ac.in)</u></a></b>
 <table width="520" border="0" cellpadding="2" cellspacing="10">
   <tr>
-    <td><a style="color:#F08D20" href="http://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/73-dr-rahul-swarup-sharma" target="_blank" title="Profile - Dr. Rahul Swarup Sharma">Dr. Rahul Swarup Sharma</a> (Project Co-ordinator)</td>
+    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/73-dr-rahul-swarup-sharma" target="_blank" title="Profile - Dr. Rahul Swarup Sharma">Dr. Rahul Swarup Sharma</a> (Project Co-ordinator)</td>
   </tr>
   <tr>
-    <td><a style="color:#F08D20" href="http://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/72-dr-k-hans-raj" target="_blank" title="Profile - Prof. K. Hans Raj">Prof. K. Hans Raj</a> (Advisor)</td>
+    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/72-dr-k-hans-raj" target="_blank" title="Profile - Prof. K. Hans Raj">Prof. K. Hans Raj</a> (Advisor)</td>
   </tr>
   <tr>
-    <td><a style="color:#F08D20" href="http://www.dei.ac.in/dei/usic/index.php/usic-faculty/2-soami-piara-satsangee" target="_blank" title="Profile - Prof. S.P. Satsangee">Prof. S.P. Satsangee</a> (DEI Virtual Labs  Co-ordinator)</td>
+    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/usic/index.php/usic-faculty/2-soami-piara-satsangee" target="_blank" title="Profile - Prof. S.P. Satsangee">Prof. S.P. Satsangee</a> (DEI Virtual Labs  Co-ordinator)</td>
   </tr>
   <tr>
-    <td>Er. Ajay Kant (Web Developer)</td>
+    <td><a style="color:#F08D20" href="ajay/index.html" target="_blank" title="Profile - Ajay Kant Upadhyay">Er. Ajay Kant Upadhyay</a> (Web Developer)</td>
   </tr>
 </table><br>
 <b style="font-size:1.8em; color:#0000ff; text-decoration:underline">Technical Support-Members (Present and Past)</b>
 <table width="520" border="0" cellpadding="2" cellspacing="10">
   <tr>
     <td>Er. Atul Dayal</td>
-    <td>Er. Jitendra Kumar Verma</td>
+    <td>Er. Vishnu Pradeep Sharma</td>
   </tr>
   <tr>
     <td>Er. Ishant Singhal</td>
@@ -68,7 +68,7 @@ include("mainmenu.php");
   </tr>
   <tr>
     <td></td>
-    <td>Er. Vishnu Pradeep Sharma</td>
+    <td>Er. Jitendra Kumar Verma</td>
   </tr>
   <tr>
     <td></td>

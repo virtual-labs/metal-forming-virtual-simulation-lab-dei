@@ -1,0 +1,183 @@
+body
+{
+	background-color:#ECEEF1;
+	padding-left:150px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#logo
+{
+	width:100;
+	height:100;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+#container 
+{
+	padding-right:20px;
+	padding-left:10px;
+	width:1000px;
+	padding-bottom:5px;
+	margin:0px;
+	background-color:#FFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align:justify;
+}
+
+#head
+{
+	text-align:justify;
+	color:#00E;
+}
+
+.name
+{
+	padding-left:80px;
+	font-family:"Monotype Corsiva";
+	font-weight:100;
+	font-size:30 pt;
+	color: #000;
+}
+
+#content
+{
+	font-family: "Arial Rounded MT Bold";
+}
+
+.pad
+{
+	padding-left:72px;
+	padding-top:30px;
+	text-align:center;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	color: #00D;
+	font-family: "Arial Rounded MT Bold";
+}
+
+/*Menu Section*/
+#menu {
+	width: 1100px;
+	height: 60px;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+#menu ul {
+	margin: 0;
+	padding-left:0px;
+	padding-top:0px;
+	list-style: none;
+	line-height: normal;
+	}
+
+#menu li {
+	float: left;
+	background: url(../image/menubg.jpeg) #FFFFFF  repeat-x left top;
+}
+
+#menu a {
+	display: block;
+	height: 30px;
+	margin-right:1px;
+	padding: 16px 16px 0px 15px;
+	background: url(../image/bgmenu.jpeg) no-repeat right top;
+	text-align: center;
+	text-transform: uppercase;
+	color: #000;
+	border: none;
+	font:   11.5px "Arial Black", Gadget, sans-serif;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	background: url(../image/menuHover.png) repeat-x left top;
+	text-decoration: none;
+	color: #00f;
+	 border: 2px solid #ECEEF1  ;
+}
+
+#menu .current_page_item a {
+
+}
+
+.imagedropshadow {
+	padding: 5px;
+	border: solid 3px #EFEFEF;
+}
+
+a:hover img.imagedropshadow {
+	border: solid 1px #CCC;
+	-moz-box-shadow: 1px 1px 5px #999;
+	-webkit-box-shadow: 1px 1px 5px #999;
+        box-shadow: 1px 1px 5px #999;
+}
+
+/*Side Gallery Section*/
+.content{
+    width: 800px;
+    height: 100px;
+    margin:  auto;
+    margin-top: 0px;
+	margin-left:100px;
+    }
+	
+.listing{
+    margin-top: 30px;
+    display: inline;
+    }
+	
+.li{
+    display: inline;
+    margin-left:0px;
+    }
+	
+.images{
+    border: 5px solid white;
+    border-radius: 10px;
+    -moz-border-radius: 5px;
+    }
+	
+.images:hover{
+    border: 3px solid #CF3 ;
+    }
+  
+/* it is the index logo section */
+.index
+{
+	width:260px;
+	height:150px;
+	margin-left:760px;
+	position:absolute;
+	border:0px solid #ECEEF1;
+	color: #00D;
+}
+
+/* it is define the head font size */
+.w {
+	font-size: 30pt;
+	font-weight:100;
+}
+
+.list
+{
+	margin:auto;
+	padding: 10px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14pt;
+	text-align:justify;
+	list-style: url(../image/menu.jpg);
+}
+	
+.color
+{
+	color:#00D;
+	font-style: italic;
+}

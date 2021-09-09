@@ -1,8 +1,4 @@
 <?php
-/**
- * @author Jooria Refresh Your Website <www.jooria.com>
- * @copyright 2010
- */
 function Pages($tbl_name,$limit,$path)
 {
 	$query = "SELECT COUNT(*) as num FROM $tbl_name";

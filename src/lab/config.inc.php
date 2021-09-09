@@ -1,7 +1,7 @@
 <?php
 
 # Database name
-$db = "virtuallab";
+$db = "mfvslab";
 
 # Internet address or hostname of database host
 $db_host = "localhost";
@@ -10,6 +10,6 @@ $db_host = "localhost";
 $db_user = "root";
 
 # Database password
-$db_password = "newpassword";
+$db_password = "";
 
 ?>

@@ -1,0 +1,82 @@
+<?php session_start();
+if($_SESSION['auth']!="ajayMEM103kant2019upadhyay")
+{
+header("location:mem103.php");
+}
+else
+{
+?>
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Manufacturing Processes-I</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
+<link href="css/mem.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background:#FFFFFF; margin:auto; width: 1024px; height:100%;">
+<div id="header"><br/>MEM-103 Manufacturing Processes-I<br /><br /></div>
+<div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
+<table border="0" width="100%"><tr>
+<td width="30%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
+<td style="text-align:right;"><a href="workshop.php" title="Bench Work">Bench Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mem.php" title="Lecture Notes, MEM-103 Manufacturing Process-I">Lecture Notes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
+</tr></table><br/></div>
+<div style="text-align:justify">
+<b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial7.pdf" target="_blank" title="Download Tutorial 7">Tutorial 7 Download</a><br/><br/>
+<b>Using Depth Micrometer</b><br/>
+<center><img src="images/mem/Workshop/71.jpg" width="500" height="550"><br/><br/><b>Figure 1: Depth micrometer</b></center><br/>
+Another type of micrometer is a depth micrometer. It is an accurate and reliable tool for depth measurement. This micrometer is used to find the distance between two parallel surfaces i.e. depth of holes, slots, shoulders and projections.<br/><br/>
+This micrometer has the same thimble and sleeve as outside micrometer. It is available both in English and metric systems. The range of measurement for depth micrometer is also one inch or 25 mm. Further this range can be increased by using interchangeable measuring extension rods.<br/><br/>
+Depth micrometers measure from a reference plane to a point. The large base of the depth micrometer makes up the reference plane. The very small area of the measuring rod makes up the point of contact. With a depth micrometer it is important that the area in which the reference base of the depth micrometer makes contact with the workpiece is clean and free of dirt or burrs.<br/><br/>
+The depth micrometer reads in reverse from other micrometers.<br/><br/>
+<center><img src="images/mem/Workshop/72.jpg" width="250" height="150"><br/><br/><b>Figure 2: Depth micrometers read from the right to the left</b></center><br/>
+<b>Difference between reading a outside micrometer and depth micrometer:</b><br/>
+1. The zero reading of depth micrometer appears when the thimble is at the topmost position.<br/>
+2. The thimble reads clockwise.<br/>
+3. The depth micrometer graduations are in reverse order i.e. from head to thimble.<br/><br/>
+Depth micrometers usually come in sets with different length depth measuring extension rods allowing the measuring tool to be used over a broader range of depths.<br/><br/>
+<center><img src="images/mem/Workshop/73.jpg" width="280" height="300"><br/><br/><b>Figure 3: Additional interchangeable extension rods of different lengths with depth micrometer</b></center><br/>
+A common use of this micrometer is to find the depth of a machined hole. The base of the micrometer is placed on the top of the part. The extension rod is moved down into the hole with the thimble. When the rod reaches the bottom, the reading is noted on the scale. When using a depth micrometer, ensure that the base is seated firmly on the two parallel surfaces. Extend the extension rod carefully until it touches the bottom of the area to be measured. Ensure that the extension rod is perpendicular.<br/><br/>
+<center><img src="images/mem/Workshop/74.jpg" width="450" height="420"><br/><br/><b>Figure 4: Setting a depth micrometer for taking measurement</b></center><br/>
+When measuring the depth of a drilled hole, it is important to measure at the outside wall of the hole to obtain the depth of the full diameter portion of the hole. Hold the measuring rod next to the wall of the drilled hole to assure an accurate full diameter depth measurement.<br/><br/>
+<center><img src="images/mem/Workshop/75.jpg" width="450" height="420"><br/><br/><b>Figure 5: Drilled holes are typically measured to full diameter depth</b></center><br/>
+<b>Types of Depth Micrometers</b><br/>
+Depth micrometers come in a variety of styles. Each style is designed for a certain set of circumstances.<br/>
+1. Depth micrometer with rotating rod.<br/>
+2. Depth micrometer with non-rotating rods.<br/>
+(The non-rotating rod is ideal for measuring a narrow shoulder without the rod rolling off.)<br/>
+3. Depth micrometer with half-base<br/>
+(This will allow you to measure depths of holes and slots close to shoulders or between obstructions.)<br/><br/>
+Depth micrometers can also be purchased with very small rods. Rods of small diameters are available for measuring very narrow slots, recesses or the depths of small holes.<br/><br/>
+<b>Precautions while using depth micrometer</b><br/>
+1. Whenever you change the existing rod to different length rods, check the accuracy of the depth micrometer against a known standard.<br/>
+2. There is no need to move the micrometer around to attain the proper feel.<br/>
+3. Sliding the micrometer should be avoided. The small rods will wear very quickly and the accuracy of the micrometer may be lost.<br/><br/>
+<b>Inside Micrometer</b><br/>
+The inside micrometer is direct measuring tool used for measuring the diameter of holes or can be used to measure the accuracy of parallel planes. The inside micrometer is very similar to the outside micrometer, except that it has no Frame. Inside micrometers are available both in English and metric system.<br/><br/>
+<center><img src="images/mem/Workshop/76.jpg" width="450" height="550"><br/><br/><b>Figure 6: Inside micrometer</b></center><br/>
+The total length of the inside micrometer is itself the overall length being measured. The inside micrometer is a much more accurate measuring tool, for inside measurement, than the caliper but taking measurement with it is some what more complicated than any other micrometer.<br/>
+Only one micrometer head is used along with different number of interchangeable measuring extension rods to cover a broad range of measurements. To obtain different ranges of measurement interchangeable measuring extension rods are assembled into the micrometer head. Reading an inside micrometer is similar to reading a standard micrometer except that extension rod and collar lengths must be added to the head measurement. The scale on the inside micrometer works and is read just like that of the outside micrometer.<br/><br/>
+It takes a little more practice to get an accurate measurement with an inside micrometer. For an accurate measurement the micrometer must be positioned perfectly straight at right angles to the centerline of the hole being measured. If not, you will get an incorrect reading. Then move one end back and forth slightly to get the maximum reading on the scales. It is always a good idea to take two or three additional readings as a check.<br/><br/>
+In some cases a micrometer handle is used to reach into inaccessible places or in small areas where the fingers would get in the way.<br/><br/>
+<center><img src="images/mem/Workshop/77.jpg" width="600" height="200"><br/><br/><b>Figure 7: Measuring small diameter using long handle for holding the micrometer</b></center><br/>
+<center><img src="images/mem/Workshop/78.jpg" width="600" height="150"><br/><br/><b>Figure 8: Measuring length using extension rod</b></center><br/>
+<center><img src="images/mem/Workshop/79.jpg" width="400" height="350"><br/><br/><b>Figure 9: Measuring height</b></center><br/>
+When using the inside micrometer it is necessary to rotate the head end of the micrometer in the axial direction as well as up and down All the while adjusting the head to the proper feel. Rotating the head in this manner assures that the micrometer is accurately centralized in the part.<br/><br/>
+<center><img src="images/mem/Workshop/80.jpg" width="265" height="250"><br/><br/><b>Figure 10: Measuring large diameter using extension rod</b></center><br/>
+<b>Micrometer precautions</b><br/>
+In taking measurements with the micrometer, several precautions are necessary.<br/>
+1. Make sure the spindle is backed off slightly from the anvil in case of outside micrometer and interchangeable extension rods are dissembled from head in case of depth and inside micrometers.<br/>
+2. Continued sliding work between the anvil and spindle may wear the surfaces.
+<table width=1024><tr><td style="text-align:left; font-weight:bold;"><a href="tutorial6.php" title="Workshop Practice">Tutorial 6</a></td>
+<td style="text-align:right; font-weight:bold;"><a href="tutorial8.php" title="Workshop Practice">Tutorial 8</a></td></tr></table>
+</div>
+<div id="footer">
+&copy; MEM103 - Dayalbagh Educational Institute <a href="https://www.dei.ac.in" target="_blank" title="DEI">(www.dei.ac.in)</a>&nbsp;-&nbsp;<a href="../ajay/index.html" target="_blank" title="Profile">Ajay Kant Upadhyay</a></div>
+</body>
+</html>
+<?php
+}
+?>

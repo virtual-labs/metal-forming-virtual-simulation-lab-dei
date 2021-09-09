@@ -6,7 +6,7 @@
 <li><a href="Step.php">Steps of Forming Process</a></li>
 <li><a href="Variable.php">Process Variables</a></li>
 <li><a href="Simulation_Setup.php">Simulation Setup</a></li>
-<li><a href="Glossary.php">Glossary</a></li>
+<li><a href="glossary.php">Glossary</a></li>
 </ul>
 </li>
 <li class="dir"><a href="#">Equipments</a>
@@ -73,6 +73,7 @@
 <li><a href="Registration.php">Registration</a></li>
 <li><a href="feedback.php">Feedback</a></li>
 <li><a href="contributors.php">Contributors</a></li>
+<li><a href="gallery.php" title="Workshops Held">Workshops</a></li>
 <li><a href="Reference.php">References</a></li>
-<li><a href="mem103_16/mem103.php" title="Manufacturing Processes">MEM-103</a></li>
+<li><a href="mem103/mem103.php">MEM103</a></li>
 </li>

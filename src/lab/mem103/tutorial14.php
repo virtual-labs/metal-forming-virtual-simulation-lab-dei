@@ -1,0 +1,64 @@
+<?php session_start();
+if($_SESSION['auth']!="ajayMEM103kant2019upadhyay")
+{
+header("location:mem103.php");
+}
+else
+{
+?>
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Manufacturing Processes-I</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
+<link href="css/mem.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background:#FFFFFF; margin:auto; width: 1024px; height:100%;">
+<div id="header"><br/>MEM-103 Manufacturing Processes-I<br /><br /></div>
+<div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
+<table border="0" width="100%"><tr>
+<td width="30%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
+<td style="text-align:right;"><a href="workshop.php" title="Bench Work">Bench Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mem.php" title="Lecture Notes, MEM-103 Manufacturing Process-I">Lecture Notes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
+</tr></table><br/></div>
+<div style="text-align:justify">
+<b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial14.pdf" target="_blank" title="Download Tutorial 14">Tutorial 14 Download</a><br/><br/>
+<b>Using Surface gage</b><br/><br/>
+A surface gage is used for many purposes, but is most often used for layout work. The gage can be used to scribe layout lines at any given distance parallel to the work surface. The spindle may be adjusted to any position with respect to the base and tightened in place with the spindle nut. The rocker adjusting screw provides for finer adjustment of the spindle by pivoting the spindle rocker bracket. The scriber can be positioned at any height and in any desired direction on the spindle by adjusting the scriber. A surface plate and combination square are needed to set the surface gage to the correct dimension.
+<center><img src="images/mem/Workshop/124.jpg" width="450" height="400"><br/><b>Figure 1: Surface gage</b></center>
+<b>Layout and taking measurements with a surface gage</b><br/>
+1. Check the base to be sure it is free of burrs and clean. The scriber point must be sharp.<br/><br/>
+2. Position the spindle and scriber. They should be as close to the work as possible for the layout operation.<br/><br/>
+3. Place the reference face of the combination square on a surface plate. Firmly hold the square head. Slide the blade down until the end touches the surface plate.<br/><br/>
+4. Hold the surface gage lightly on the reference surface (surface plate). Bring the surface gage close to the square and roughly set the scriber. Turn the adjusting screw to move the scriber point to the required measurement.<br/><br/>
+5. Hold the workpiece securely. Position the surface gage near the work. Scribe the required line on the workpiece.<br/><br/>
+6. For measuring, turn the adjusting screw to position the scriber point exactly on the measured point.<br/><br/>
+7. Determine the measurement by reading the surface gage measurement with a line-graduated rule.<br/><br/>
+<center><img src="images/mem/Workshop/125.jpg" width="500" height="350"><br/><b>Figure 2: Setting a surface gage on surface plate to a specified height</b></center><br/>
+<center><img src="images/mem/Workshop/126.jpg" width="450" height="320"><br/><b>Figure 3: Surface gage used to scribe parallel line</b></center>
+<b>Reference Planes</b><br/>
+Very flat surfaces are needed when setting up height or angle measurements. This is because the measuring instruments are moved across the surface, and if the height varies, accuracy will suffer. Typical plates are made from cast iron, or granite. A typical plate might be 2 feet by 2 feet in area.<br/><br/>
+<b>Surface Plate</b><br/>
+A surface plate provides a true, smooth, plane surface. It is used in conjunction with surface and height gages as a level base on which the gages and the workpiece are placed to obtain accurate measurements. The flat surface is used as a reference point or surface. These plates are made of semi-steel or granite and should never be used for any job that would scratch or nick the surface. The surface plate is an auxiliary accessory. As an accessory it is combined with other tools, measuring instruments and test equipment. It is universally to provide a reference surface. The surface plate is essential to layout and measurement processes. Figure below provides examples of popular manufactured surface plates. A surface plate may be a simple, flat plate that has been accurately machined. The term usually refers to a plate that has been machined and scraped to an extreme accuracy or ground to a fine surface finish. The underside is honeycombed with a number of webbed sections. These prevent the surface plate from warping, thus providing a permanent flat surface.<br/><br/>
+<center><img src="images/mem/Workshop/127.jpg" width="300" height="320"><br/><b>Figure 4: General styles of precision granite surface plates</b></center><br/>
+<b>The granite surface plate is used extensively today. Such a surface plate has a number of advantages over the cast iron type:</b><br/>
+a. High degree of surface flatness.<br/><br/>
+b. Highly stable. Maintains surface flatness because there is no warpage and have lower thermal expansion.<br/><br/>
+c. Capability to remain flat, even when chipped. Burrs do not occur. Cast iron surface plates, by contrast tend to crater and require rescraping.<br/><br/>
+d. Simplified maintenance. The surfaces are rust proof. They may be cleaned easily with soap and water, naphtha and other readily available cleaners.<br/><br/>
+<b>Note:</b> Care and judgment must be exercised in placing measuring tools, instruments and workpieces on the surface plate. All should be clean and burr-free. The surface plate also must be checked continuously for burrs and carefully wiped clean.<br/><br/>
+<b>V-Block</b><br/>
+It is a rectangular block of hardened and ground steel. V-blocks are widely used to hold cylindrical parts for layout, for locating and drilling holes in cylindrical workpieces and also for checking the angles of 45 degree or 90 degree of workpiece surfaces. It has V-shaped angular surfaces, which form 90 degree angle and are central with the sides of the block. Round workpieces of different diameters may be centered and nested in V-blocks. Slot cut in both sides of the block enable the use of U-shaped clamp holding the cylindrical workpiece in the position.<br/><br/>
+<center><img src="images/mem/Workshop/128.jpg" width="500" height="380"><br/><b>Figure 5: V-block set</b></center>
+<table width=1024><tr><td style="text-align:left; font-weight:bold;"><a href="tutorial13.php" title="Workshop Practice">Tutorial 13</a></td>
+<td style="text-align:right; font-weight:bold;"><a href="tutorial15.php" title="Workshop Practice">Tutorial 15</a></td></tr></table>
+</div>
+<div id="footer">
+&copy; MEM103 - Dayalbagh Educational Institute <a href="https://www.dei.ac.in" target="_blank" title="DEI">(www.dei.ac.in)</a>&nbsp;-&nbsp;<a href="../ajay/index.html" target="_blank" title="Profile">Ajay Kant Upadhyay</a></div>
+</body>
+</html>
+<?php
+}
+?>

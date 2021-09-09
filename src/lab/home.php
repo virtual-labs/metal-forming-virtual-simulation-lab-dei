@@ -33,9 +33,7 @@ function init() {
   disableDraggingFor(document.getElementById("draggingDisabled"));
 } 
 function disableDraggingFor(element) {
-  // this works for FireFox and WebKit in future according to http://help.dottoro.com/lhqsqbtn.php
   element.draggable = false;
-  // this works for older web layout engines
   element.onmousedown = function(event) {
                 event.preventDefault();
                 return false;
@@ -78,8 +76,8 @@ The <b style="color:#0000FF; font-size:16px; text-transform:uppercase;">
 objective of Metal Forming Virtual Simulation Lab</b> is to make students understand the various fundamental metal forming processes and to recognise the effect of various process parameters with the help of computer
 numerical simulations. In this lab animations of upsetting process, extrusion process, multi-step forging processes, closed die forging, rolling process, sheet metal processes and intricate phenomena during these processes are incorporated to make the student appreciate and develop better understanding of the fundamental concepts.
 </td><td>
-<iframe width="320" height="280" src="https://www.youtube.com/embed/Vmvy4WEQtFU?rel=0&autoplay=1&loop=1&playlist=Vmvy4WEQtFU" frameborder="0" allowfullscreen></iframe>
-<iframe width="320" height="180" src="https://www.youtube.com/embed/qcHpUx_NIbE?rel=0&autoplay=1&loop=1&playlist=qcHpUx_NIbE" frameborder="0" allowfullscreen></iframe>
+<img src="images/slide.gif" height="280" width="320"><br />
+<img src="images/home.gif" height="180" width="320">
 </td></tr></table>
 <?php
  	//Opening file to get counter value

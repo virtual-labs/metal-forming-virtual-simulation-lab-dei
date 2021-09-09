@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Photo Gallery - Ajay Kant Upadhyay</title>
+<link rel="shortcut icon" type="image/x-icon" href="../image/icon.ico">
+<link href="js/style.css" rel="stylesheet" type="text/css" />		
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery_gallery.js"></script>
+	<script type="text/javascript" src="js/filter.js"></script>	
+<SCRIPT language="javascript">
+msg = "Photo Gallery - Ajay Kant Upadhyay ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+<!-- 
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  function mischandler(){
+   return false;
+ }
+  function mousehandler(e){
+ 	var myevent = (isNS) ? e : event;
+ 	var eventbutton = (isNS) ? myevent.which : myevent.button;
+    if((eventbutton==2)||(eventbutton==3)) return false;
+ }
+ document.oncontextmenu = mischandler;
+ document.onmousedown = mousehandler;
+ document.onmouseup = mousehandler;
+ 
+window.onload = init; 
+function init() {
+  disableDraggingFor(document.getElementById("draggingDisabled"));
+} 
+function disableDraggingFor(element) {
+  // this works for FireFox and WebKit in future according to http://help.dottoro.com/lhqsqbtn.php
+  element.draggable = false;
+  // this works for older web layout engines
+  element.onmousedown = function(event) {
+                event.preventDefault();
+                return false;
+};
+}
+-->
+</script>
+</head>
+
+<body>
+<div id="container">
+<a href="http://www.vlab.co.in/institute_detail.php?ins=010" target="_blank"><img src="../image/vlabLogo.jpg" class="index" /></a>
+<div id="head">
+<table width="792" height="155">
+<tr>
+<td><a href="../index.html"><img src="../image/ajay.jpg" width="162" height="145" /></a></td>
+<td class="name"><span class="w">Ajay Kant Upadhyay</span><br />
+Faculty of Engineering,<br>DayalBagh Educational Institute,<br>Dayalbagh, Agra<br>Uttar Pradesh - 282 005</td>
+</tr>
+</table>
+</div>
+<div id="menu">
+<ul>
+<li><a href="../home.html">Home</a></li>
+<li><a href="../aboutme.html">About Me</a></li>
+<li><a href="../qualification.html">Qualification</a></li>
+<li><a href="../training.html">Training</a></li>
+<li><a href="../experience.html">Experience</a></li>
+<li><a href="../assignment.html">Assignment</a></li>
+<li><a href="../certificate.html">Certificates</a></li>
+<li><a href="../project.html">project</a></li>
+<li class="current_page_item"><a href="gallery.html">Gallery</a></li>
+<li><a href="http://www.vlab.co.in" target="_blank">VLab</a></li>
+</ul>
+</div>
+<!-- start -->
+            <div id="categories">
+				<ul>
+					<li><a href="#" id="category1" class="current">Virtual Lab</a></li>
+					<li><a href="#" id="category2" class="filter">3D Printer</a></li>
+					<li><a href="#" id="category3" class="filter">Workshops</a></li>
+					<li><a href="#" id="category4" class="filter">Gujrat</a></li>
+					<li><a href="#" id="category5" class="filter">Hyderabad</a></li>
+					<li><a href="#" id="category6" class="filter">Mumbai</a></li>
+					<li><a href="#" id="category7" class="filter">Others</a></li>
+				</ul>
+			</div>	
+	<div id="gallery">
+					<div id="output">
+					 <center> <img src="images/VirtualLab/1.jpg" alt="Virtual Lab at DEI"/></center>
+</div>		
+					<div id="captions">
+						<div id="nav">
+							<ul>
+							<li><a href="#" class="navPrevious">[ &lt; ]</a></li>
+								<li><a href="#" class="navNext">[ &gt; ]</a></li>
+								<li><a href="#" class="navStopAdvance">[ Stop ]</a></li>
+								<li><a href="#" class="navPlayAdvance active">[ Play ]</a></li>
+							</ul>
+						</div>	
+						<span class="line"></span>
+						<br class="clear" />
+						<span class="line2"></span>
+	    </div>
+					<ul class="thumbnails category1">
+					<li ><img src="images/VirtualLab/1.jpg" alt="Virtual Lab at DEI" title="Virtual Lab visit 2016"/></li>
+                    <li><img src="images/VirtualLab/2.jpeg" alt="Virtual Lab at DEI" title="Virtual Lab team 2012"/></li>
+                    <li><img src="images/VirtualLab/3.jpg" alt="Virtual Lab at DEI" title="Ajay Kant with VLab Banner 2012"/></li>
+                    <li><img src="images/VirtualLab/4.jpg" alt="Virtual Lab at DEI" title="Ajay Kant and Anil Kumar with VLab Banner 2012"/></li>
+                    <li><img src="images/VirtualLab/5.jpg" alt="Virtual Lab at DEI" title="Ajay Kant and Anil Kumar 2012"/></li>
+                    <li><img src="images/VirtualLab/6.jpg" alt="Virtual Lab at DEI" title="Ajay Kant and Atul Dayal 2012"/></li>
+                    <li><img src="images/VirtualLab/7.jpg" alt="Virtual Lab at DEI" title="Ajay Kant with MHRD Secretary 2012"/></li>
+                    <li><img src="images/VirtualLab/8.jpg" alt="Virtual Lab at DEI" title="Virtual Lab at DEI 2013"/></li>
+                    <li><img src="images/VirtualLab/9.jpg" alt="Virtual Lab at DEI" title="Virtual Lab visit 2015"/></li>
+					<li><img src="images/VirtualLab/10.jpg" alt="Virtual Lab at DEI" title="Ajay Kant with MLA Yogendra Upadhyay 2017"/></li>
+                    <li><img src="images/VirtualLab/11.jpg" alt="Virtual Lab at DEI" title="NAAC visit of Virtual Lab at DEI 2013"/></li>
+					</ul>
+  <br class="clear" />
+					<script type="text/javascript">
+
+						$.gallerax({
+							outputSelector: 		'#output img',				// Output selector
+							thumbnailsSelector:		'.thumbnails li img',		// Thumbnails selector
+							captionSelector:		'#captions .line',			// Caption selector
+							captionLines:			2,							// Caption lines (3 lines)
+							fade: 					'fast',						// Transition speed (fast)
+							navNextSelector:		'#nav a.navNext',			// 'Next' selector
+							navPreviousSelector:	'#nav a.navPrevious',		// 'Previous' selector
+							navFirstSelector:		'#nav a.navFirst',			// 'First' selector
+							navLastSelector:		'#nav a.navLast',			// 'Last' selector
+							navStopAdvanceSelector:	'#nav a.navStopAdvance',	// 'Stop Advance' selector
+							navPlayAdvanceSelector:	'#nav a.navPlayAdvance',	// 'Play Advance' selector
+							advanceFade:			'slow',						// Advance transition speed (slow)
+							advanceDelay:			4000,						// Advance delay (4 seconds)
+							advanceResume:			12000,						// Advance resume (12 seconds)
+							thumbnailsFunction: 	function(s) {				// Thumbnails function
+							
+								return s.replace(/_thumb\.jpg$/, '.jpg');
+								
+							}
+						});
+					</script>
+			<!-- end -->
+			</div>
+	</div>
+</body>
+</html>
