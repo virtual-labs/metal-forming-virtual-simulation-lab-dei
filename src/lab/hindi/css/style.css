@@ -1,0 +1,32 @@
+.nav-primary {
+    background-color: #3399CC;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.sidebar .widget-title {
+    background-color: #3399CC;
+    color: #fff;
+    padding: 10px;
+}
+a {
+    background-color: inherit;
+    color: #0938ed;
+    font-weight: 400;
+    text-decoration: none;
+}
+.nav-primary a:hover, .nav-primary .genesis-nav-menu .current-menu-item>a {
+    color: #ffff00;
+}
+.marqueestyle {
+    position: fixed;
+    bottom: 0%;
+    margin-right: 7px;
+    right: -7px;
+    z-index: 999;
+    height: 32px;
+    width: 100%;
+    background-color: #3399CC;
+    color: #FFFFFF;
+}
+.marqueestyle a{color:white;}

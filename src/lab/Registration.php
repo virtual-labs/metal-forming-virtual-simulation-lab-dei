@@ -153,15 +153,14 @@ include("mainmenu.php");
 </script>
 <div style="background:#FFFFFF; position: relative; margin:auto; width: 1024px; min-height:550px;">
 <div style="padding:20px;">
-<b style="font-size:21px; color:#999999;">Metal Forming Virtual Simulation Lab - Registration</b><br/><br/>
+<b style="font-size:22px;"><a href="hindi/home.html" target="_blank">Metal Forming Virtual Simulation Lab in Hindi</a></b><br/><br/>
 <center><table border=0>
-<th style="background:#3399EE; font-size:16px; color:#FFFFFF;" width="45%">Sign in</th>
+<th style="background:#3399EE; font-size:16px; color:#FFFFFF;" width="45%">Registration</th>
 <th style="background:#3399EE; font-size:16px; color:#FFFFFF;" width="55%">Create an account</th>
 <tr><td  valign="top" style="font-size:13px;">
-If you use any of the following services, you already have your own OpenID. Please choose one and associate it with our website. 
-You will be taken to the respective providers website and our website will never see your password or other personal information.
-We use the name and email address that provider gives us to set up your account. 
-We hate spam as much as you do and will never ever share your email with a third party service.</td>
+This is an open source website. Registration is optional for Metal Forming Virtual Simulation Lab. 
+We never use your information as name and email address for any kind of process. 
+We hate spam as much as you do and will never ever share your email with any third party service.</td>
 <td><center><table border=0>
 <form id="form1" name="form1" method="Post" action="Signin.php" onsubmit="return validation();">
 

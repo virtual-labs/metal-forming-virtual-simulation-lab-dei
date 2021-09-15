@@ -106,7 +106,7 @@ include("mainmenu.php");
 </script>
 <div style="background:#FFFFFF; position: relative; margin:auto; width: 1024px; min-height:550px;">
 <div style="padding-left:35px;">
-<center><br/><b style="font-size:1.6em; color:#ff00ff; text-decoration:underline">Metal Forming Virtual Simulation Lab - Feedback</b>
+<center><br/><b style="font-size:1.6em; color:#ff00ff; text-decoration:underline"><a href="hindi/home.html" target="_blank">Metal Forming Virtual Simulation Lab</a> - Feedback</b>
 <div style="font-family:arial; font-size:2em; color:#ff0000;" id="message"></div></center><br>
 <FORM name="feedbackform" METHOD="post" onSubmit="return validation()" action="feedback.php">
 <table>

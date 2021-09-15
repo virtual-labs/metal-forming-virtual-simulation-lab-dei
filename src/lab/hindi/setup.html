@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>मेटल फोर्मिंग वर्चुअल सिमुलेशन प्रयोगशाला</title>
+<link rel="shortcut icon" href="image/icon.ico">
+<link rel='stylesheet'  href='css/main.css' type='text/css' media='all' />
+<link rel='stylesheet'  href='css/style.css' type='text/css' media='all' />
+<link rel='stylesheet'  href='css/dashicons.css' type='text/css' media='all' />
+<script type='text/javascript' src='css/jquery.js'></script>
+<script type='text/javascript' src='css/responsive.js'></script>
+<script language="javascript">
+msg = "मेटल फोर्मिंग वर्चुअल सिमुलेशन प्रयोगशाला - साक्षात आभासी प्रयोगशाला ! ";
+msg = msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos >  msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</script>
+</head>
+<body class="content-sidebar primary-nav">
+<nav class="nav-primary">
+<div class="wrap">
+<ul id="primary-menu" class="genesis-nav-menu menu-primary">
+<li id="Home" class="menu-item"><a href="home.html"><strong>होम</strong></a></li>
+<li id="Motivation" class="menu-item"><a href="motivation.html"><strong>मोटीवेशन</strong></a>
+<li id="Metal_Forming" class="menu-item"><a href="metalForming.html"><strong>मेटल फोर्मिंग</strong></a>
+<li id="Application" class="menu-item"><a href="application.html"><strong>एप्लीकेशन</strong></a></li>
+<li id="Steps" class="menu-item"><a href="steps.html"><strong>मेटल फोर्मिंग के स्टेप</strong></a></li>
+<li id="Variables" class="menu-item"><a href="variables.html"><strong>प्रोसेस वेरिएवल्स</strong></a></li>
+<li id="Setup" class="menu-item"><a href="setup.html"><strong>सेटप</strong></a></li>
+<li id="Upsetting" class="menu-item"><a href="upsetting.html"><strong>अपसेटिंग प्रोसेस</strong></a></li>
+<li id="Extrusion" class="menu-item"><a href="extrusion.html"><strong>ऐक्स्ट्रूजन प्रोसेस</strong></a></li>
+</ul>
+</div></nav>
+<header class="site-header">
+<div class="wrap">
+<img src="image/header.jpg">
+</div></header>
+<div class="content-sidebar-wrap site-inner">
+<main class="content">
+<b><b style="font-size:1.5em;"><center>सिमुलेशन सेटप</center></b>
+<div></div>
+<b style="font-size:1.4em;">उद्देश्य</b>
+<p style="text-align: justify;">
+अपसेटिंग प्रक्रिया का उद्देश्य बिलेट की ऊँचाई को कम करते हुए उसके व्यास में वृद्धि करना है। इस प्रकार वांछित पदार्थ वितरण, वांछित ज्यामिति और आकार प्राप्त करते है। तत्प फोर्जन प्रक्रिया में अपसेटिंग प्रक्रिया का प्रयोग ऊष्मित बिलेट की सतह से पपड़ी तोड़ने के लिए किया जाता हैं। अतप्त, ऊष्म और तप्त फोर्जन प्रक्रिया में आमतौर पर बिलेट आगामी फोर्जन क्रियाओं में प्रयोग किया जाता है। 
+अगले पन्नों में कुछ विशिष्ट प्ररूपण सिमुलेशन के साथ-साथ द्रव चलित दाबकों पर विशिष्ट अपसेट फोर्जन प्रक्रियाएँ दिखाई गई हैं। धातु प्ररूपण प्रक्रिया स्पष्ट समझ सिमुलेशन परिणामों की व्याख्या करने के लिए महत्वपूर्ण है। इसलिए कुछ चर राशियाँ और सिमुलेशन चरणों का एक ग्राफ समग्र प्ररूपण प्रक्रिया के स्पष्टीकरण के लिए प्रस्तुत किया जायेगा।<br/><br/>
+<b><b>एक विशिष्ट अपसेट फोर्जन प्रक्रिया परिमित मूलतत्व सिमुलेशन के साथ</b><br/>
+<table style="margin-left:100px;" width="350">
+<tr><td colspan="2">पदार्थ</td><td width="44">=</td><td width="64">एल्यूमिनियम</td></tr>
+<tr><td width="35" rowspan="2" style="font-weight:bold;">आयाम</td>
+<td width="44">ऊँचाई</td><td>=</td><td>100 मि.मी.</td></tr>
+<tr><td width="44">व्यास</td><td>=</td><td>100 मि.मी.</td></tr>
+<tr><td colspan="2">बिलेट का तापमान</td><td>=</td><td>125<sup>o</sup>C</td></tr>
+<tr><td colspan="2">डाई का तापमान</td><td>=</td><td>20<sup>o</sup>C</td></tr>
+<tr><td colspan="2">ऊँचाई में कमी</td><td>=</td><td>50%</td></tr>
+<tr><td colspan="2">छाबक</td><td>=</td><td>द्रव चलित</td></tr>
+<tr><td colspan="2">रैम की गति</td><td>=</td><td>1 मि.मी./से.</td></tr>
+</table><br/>
+<b>कार्यभार पदार्थ: स्टील (CK-45) द्रवचलित दाबक रैम की गति = 10 मि.मी./से.</b><br/><br/>
+<center><img src="image/setup.jpg" width="550px"/><br/>चित्र - सिमुलेशन के दौरान स्थितियाँ</center></p><br/>
+<div></div>
+</main>
+<aside class="sidebar sidebar-primary widget-area">
+<div><h4 class="widget-title">अपसेटिंग प्रक्रिया</h4>
+<center><img src="image/upsetting.gif" width="200" height="180"/></center></div>
+<div><h4 class="widget-title">ऐक्स्ट्रूजन प्रक्रिया</h4>
+<center><video src="image/extrusion.mp4" loop autoplay></video></center></div><br/>
+</aside></div>
+<marquee class="marqueestyle" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();">
+<a href="../ajay/index.html" title="अजय कान्त उपाघ्याय" target=_blank>&copy; अजय कान्त उपाघ्याय</a>
+</marquee>
+</body></html>
