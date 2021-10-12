@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial12.pdf" target="_blank" title="Download Tutorial 12">Tutorial 12 Download</a><br/><br/>
 <b>Try Square</b><br/><br/>
 The try square is used to mark a line at right angles to an edge and to check that the corners of a frame or joint are accurate. This is used to test that one surface is square (90 degrees) to another, and for marking out lines square to the face-side or face-edge. Engineering try squares have one thick side referred to as the beam (sometimes also referred as stock), which is held against the metal and one thin edge called the blade, against which the scriber is drawn. Engineer's squares have a carbon steel blade and beam. Using a square will need some practice.<br/><br/>

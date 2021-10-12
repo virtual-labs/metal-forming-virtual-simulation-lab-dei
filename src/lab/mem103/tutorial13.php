@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial13.pdf" target="_blank" title="Download Tutorial 13">Tutorial 13 Download</a><br/><br/>
 <b>Using Calipers</b><br/><br/>
 Caliper is a tool used to transfer measurements from a part to a scale, or other instrument. The measurement is then taken by rule between the caliper joints. Calipers are very useful when dealing with hard to reach locations that normal measuring instruments cannot reach. They are an important measuring aid, and in the hands of a skilled worker, they can be a real time-saver. The three common types of calipers are the inside, the outside, and the hermaphrodite calipers. Calipers are available with different features. Calipers consist of two legs that are fixed firmly together at the top. Some calipers may have a fixed rivet or screw, so that they will maintain the position in which they have been set. Others have a spring loaded pivot point at the top and are adjusted by a screw to open or close to the required position.<br/><br/>

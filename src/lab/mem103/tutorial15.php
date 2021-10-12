@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial15.pdf" target="_blank" title="Download Tutorial 15">Tutorial 15 Download</a><br/><br/>
 <b>Using Scribers</b><br/>
 The scriber is designed to serve one in workshop in the same way a pen serves one in writing in the class room. In general, it is used to scribe or mark lines on metal surfaces, and has two needle pointed ends. Scribers have a scriber point made of tempered high grade tool steel and a handle of steel tubing which may be nickel plated. The point is reversible telescoping into the knurled handle when not in use. Bent point scribers are usually 300 mm long with one straight point and one long or one short bent point bent at a 90 degrees angle for reaching and marking through holes. Some of these scribers are threaded and can be engaged in either end of the handle.<br/><br/>

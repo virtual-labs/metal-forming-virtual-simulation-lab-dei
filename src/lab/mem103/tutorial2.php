@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial2.pdf" target="_blank" title="Download Tutorial 2">Tutorial 2 Download</a><br/><br/>
 <b>Rule</b><br/>
 A rule is a flat length of wood, plastic, or metal divided or graduated into a number of spaces with specific units of measurement that can be used to measure the dimensions of an object. Rules are available in the English or metric measuring system. It is one tool that is very common in the mechanical shop area that is not of a high precision. When tolerances of fractional dimensions are required, the steel rule is used. The most commonly used steel rule is the 6" rule. It also comes in various widths and thickness to meet varying requirements.<br/><br/>

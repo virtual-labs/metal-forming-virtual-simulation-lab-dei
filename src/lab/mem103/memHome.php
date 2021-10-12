@@ -36,7 +36,7 @@ else
   })();
 </script>
 <p id="fbtab"><a href="#header" title="Back to Top"></a></p>
-<b>Session: July-December, 2019<br />
+<b>Session: July-December<br />
 Course Number: MEM103<br/>Course Title: MANUFACTURING PROCESSES I<br/>Course Teacher: <a href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/73-dr-rahul-swarup-sharma" target="_blank" title="Profile - Prof. Rahul Swarup Sharma">Prof. Rahul Swarup Sharma</a><br/>
 Class:</b> B.Tech.<br/><b>Status of Course:</b> Major Course, Approved since session: 2013<br/><b>Total Credits:</b> 3<br/><b>Periods</b> (55 mts. each)/week:4 (L:4+T:0+P:0+S:0), Min.pds./sem.:52<br/><br/>
 <b>Course objectives</b><br/>
@@ -60,7 +60,7 @@ Bulk Deformation Processes: Basic concepts of plastic deformation. Hot & cold wo
 <br/><br/><b>UNIT 4: WELDING</b><br/>
 Gas and arc welding processes. Fluxes. Filler materials. Electrodes, Resistance welding-spot, seam, butt, projection and percussion. Types of joints and edge preparation.
 <br/><br/><b>UNIT 5: BASICS OF METAL CUTTING & MACHINE TOOLS</b><br/>
-Introduction to Metal Cutting. Nomenclature of a Single Points Cutting Tool and Tool Wear. Use of Coolants in machining. Construction, specification, working principles and operations of machine tools such as Planer, Shaper, Slotter, Drill, Milling and Lathe. Estimation of speed, feed, depth of cut and time.
+Introduction to Metal Cutting. Nomenclature of a Single Points Cutting Tool and Tool Wear. Use of Coolants in machining. Construction, specification, working principles and operations of machine tools such as Planer, Shaper, Slotter, Drill, Milling and Lathe. Estimation of speed, feed, depth of cut and time.<br/><br/>
 <b>SUGGESTED READINGS:</b><br/>
 MANUFACTURING PROCESSES FOR ENGINEERING MATERIALS: Serope Kalpakjian and Steven Schmid, Pearson Education, India.
 <br/>MATERIALS AND PROCESSES IN MANUFACTURING: E. Paul DeGarmo, J T. Black, Ronald A. Kohser, John Wiley India, India.

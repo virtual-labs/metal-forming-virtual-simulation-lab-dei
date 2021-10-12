@@ -22,6 +22,18 @@ else
 <a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div>
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>Unit 4 Welding Terminal Questions</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit4/Unit4tq.pdf" target="_blank" title="Download Terminal Questions">Terminal Questions Download</a><br/><br/>
 1. Explain, with an example, the situation in which joining process becomes essential when compared to other manufacturing processes.<br/><br/>
 2. What is an oxidizing flame on a torch? Why it is used?<br/><br/>

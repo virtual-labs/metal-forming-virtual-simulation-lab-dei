@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial3.pdf" target="_blank" title="Download Tutorial 3">Tutorial 3 Download</a><br/><br/>
 <b>Combination Set</b><br/>
 The combination set, as its name implies, is a tool that has several uses. The set consists of a blade (graduated rule), square head, protractor head, and center head. The grooved rule is used with each head. The groove permits the rule to be moved into position and locked.

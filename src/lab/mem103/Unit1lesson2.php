@@ -22,7 +22,19 @@ else
 <a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
-<div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
+<div>
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <table border="0" width="100%">
 <tr><td width="65%"><b>Lesson 3 Properties of Materials</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit1/Lesson2/Unit1lesson2.pdf" target="_blank" title="Download Lesson 3">Lesson 3 Download</a></td><td><b>Supplementary Material</b></td></tr>
 <tr><td><a href="#objectives">3.1&nbsp;&nbsp;&nbsp;Objectives</a></dt><td><a href="Unit1lesson2scq.php">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>

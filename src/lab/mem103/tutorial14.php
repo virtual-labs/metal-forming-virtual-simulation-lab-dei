@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial14.pdf" target="_blank" title="Download Tutorial 14">Tutorial 14 Download</a><br/><br/>
 <b>Using Surface gage</b><br/><br/>
 A surface gage is used for many purposes, but is most often used for layout work. The gage can be used to scribe layout lines at any given distance parallel to the work surface. The spindle may be adjusted to any position with respect to the base and tightened in place with the spindle nut. The rocker adjusting screw provides for finer adjustment of the spindle by pivoting the spindle rocker bracket. The scriber can be positioned at any height and in any desired direction on the spindle by adjusting the scriber. A surface plate and combination square are needed to set the surface gage to the correct dimension.

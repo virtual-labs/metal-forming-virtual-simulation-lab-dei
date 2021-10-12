@@ -1,4 +1,4 @@
-<li class="dir"><a href="home.php">Home</a>
+<li class="dir"><a href="home.php" title="Metal Forming Virtual Simulation Lab">Home</a>
 <ul>
 <li><a href="Motivation.php">Motivation</a></li>
 <li><a href="Metal_Forming.php">Metal Forming</a></li>
@@ -6,10 +6,10 @@
 <li><a href="Step.php">Steps of Forming Process</a></li>
 <li><a href="Variable.php">Process Variables</a></li>
 <li><a href="Simulation_Setup.php">Simulation Setup</a></li>
-<li><a href="glosary.php">Glossary</a></li>
+<li><a href="glossary.php">Glossary</a></li>
 </ul>
 </li>
-<li class="dir"><a href="#">Equipments</a>
+<li class="dir"><a href="#" title="Equipments for Metal Forming">Equipments</a>
 <ul>
 <li class="dir"><a href="#">Upsetting Presses</a>
 <ul>
@@ -39,7 +39,7 @@
 </li>
 </ul>
 </li>
-<li class="dir"><a href="#">Processes</a>
+<li class="dir"><a href="#" title="Processes of Metal Forming">Processes</a>
 <ul>
 <li><a href="upsetting_process.php">Upsetting</a></li>
 <li><a href="Extrusion.php">Extrusion</a></li>
@@ -59,7 +59,7 @@
 <li><a href="Defects.php">Forging Defects</a></li>	
 </ul>
 </li>
-<li class="dir"><a href="#">Applications</a>
+<li class="dir"><a href="#" title="Applications of Metal Forming">Applications</a>
 <ul>
 <li><a href="Crankshaft.php">Crankshaft</a></li>
 <li><a href="Rod.php">Connecting Rod</a></li>
@@ -70,10 +70,10 @@
 <li><a href="Ripple.php">Ripple Process</a></li>
 </ul>
 </li>
-<li><a href="Registration.php">Registration</a></li>
-<li><a href="feedback.php">Feedback</a></li>
-<li><a href="contributors.php">Contributors</a></li>
-<li><a href="gallery.php" title="Workshops Held">Workshops</a></li>
-<li><a href="Reference.php">References</a></li>
-<li><a href="mem103/mem103.php">MEM103</a></li>
+<li><a href="Registration.php" title="Registration form">Registration</a></li>
+<li><a href="feedback.php" title="Feedback form">Feedback</a></li>
+<li><a href="contributors.php" title="Members involved in Developing Metal Forming Virtual Simulation Lab">Contributors</a></li>
+<li><a href="gallery.php" title="Workshops of Virtual Labs">Workshops</a></li>
+<li><a href="Reference.php" title="References">References</a></li>
+<li><a href="mem103/memHome.html" title="Manufacturing Processes I">&nbsp;MEM-103</a></li>
 </li>

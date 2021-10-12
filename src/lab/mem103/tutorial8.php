@@ -24,6 +24,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>MEASUREMENT, MEASURING TOOLS & LAYOUT TOOLS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Workshop/Tutorial8.pdf" target="_blank" title="Download Tutorial 8">Tutorial 8 Download</a><br/><br/>
 <b>Using Vernier Height Gage</b><br/><br/>
 The vernier height gage is widely used in taking measurements to an accuracy of 0.001” or 0.02 mm and for layout work i.e. marking a specified height on the workpiece. The three main parts are the foot block (base), the column (beam), and the slide arm. The main scale is on the column. The vernier scale is attached to the slide arm. Like the vernier caliper, main scale of height gages are graduated in divisions of 0.025 inch or 1mm and a vernier scale for reading measurements to 0.001" or 0.02mm. Measurements are taken in the same manner as with other verneir measuring instruments.<br/><br/>

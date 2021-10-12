@@ -23,6 +23,18 @@ else
 <a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div style="text-align:justify">
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 <b>WORKSHOP PRACTICE</b><br/><br/>
 Tutorial 1&nbsp;&nbsp;&nbsp;<a href="tutorial1.php" title="Introduction">Measurement, Measuring Tools & Layout Tools</a><br/>
 Tutorial 2&nbsp;&nbsp;&nbsp;<a href="tutorial2.php" title="Using Rule">Using Rule</a><br/>

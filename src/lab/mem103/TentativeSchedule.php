@@ -15,14 +15,27 @@ else
 </head>
 <body style="background:#FFFFFF; margin:auto; width: 1024px; height:100%;">
 <div id="header"><br/>MEM-103 Manufacturing Processes-I<br /><br /></div>
-<div><table width="100%"><tr>
+<div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
+<table width="100%"><tr>
 <td width="50%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
 <td style="text-align:right;"><a href="memHome.php" title="Manufacturing Processes-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="../home.php" title="Metal Forming Virtual Simulation lab">MFVL Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/>
 <a href="MEM103/TentativeSchedule.pdf" target="_blank" title="MEM-103, Tentative Schedule of Lectures">Tentative Schedule of Lectures Download</a><br/><br/></div>
 <div>
-<b>TENTATIVE SCHEDULE OF LECTURES</b><br/>MEM-103, Manufacturing Processes &ndash; I, July &ndash; December 2019<br/><br/>
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<b>TENTATIVE SCHEDULE OF LECTURES</b><br/>MEM-103, Manufacturing Processes &ndash; I, July &ndash; December<br/><br/>
 <center><table border="1" cellspacing="0" width="100%">
 <tr><td width="95">Lecture 1.</td><td>What is manufacturing?, types of production systems, professionalism and ethics.</td></tr>
 <tr><td>Lecture 2.</td><td>The evolution of manufacturing, socio-economic role of manufacturing, sustainable manufacturing, types of manufacturing processes.</td></tr>

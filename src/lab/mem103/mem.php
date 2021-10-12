@@ -23,7 +23,19 @@ else
 <a href="../home.php" title="Metal Forming Virtual Simulation lab">MFVL Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div>
-<a href="MEM103/QB_MEM_103.pdf" target="_blank" title="Download MEM-103 QUESTION BANK 2019">MEM-103 QUESTION BANK 2019 Download</a><br/><br/>
+<script type="text/javascript">
+//Google Analytics Code
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38541839-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<a href="MEM103/QB_MEM_103.pdf" target="_blank" title="Download MEM-103 QUESTION BANK">MEM-103 QUESTION BANK  Download</a><br/><br/>
 <b>UNIT 1:&nbsp;&nbsp;&nbsp;Introduction to Manufacturing</b><br/>
 <table border="0" width="100%">
 <tr><td width="50%">LESSON 1&nbsp;&nbsp;&nbsp;<a href="Unit1lesson0.php" title="Socio Economic Susutainability">Socio Economic Susutainability</a></td><td></td></tr>
