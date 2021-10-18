@@ -31,7 +31,7 @@ else
 <p id="fbtab"><a href="#header" title="Back to Top"></a></p>
 <table width="100%"><tr>
 <td width="30%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
-<td style="text-align:right;"><a href="Unit3Lesson3.php" title="Lesson 3 Casting Process: Moulding">Lesson 3 Casting Process: Moulding</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<td style="text-align:right;"><a href="Unit3lesson3.php" title="Lesson 3 Casting Process: Moulding">Lesson 3 Casting Process: Moulding</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div>

@@ -37,8 +37,8 @@ else
 </tr></table><br/></div>
 <div>
 <table border="0" width="100%">
-<tr><td width="65%"><b>Lesson 4 General Shop Safety</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit1/Lesson3/Unit1lesson3.pdf" target="_blank" title="Download Lesson 4">Lesson 4 Download</a></td><td><b>Supplementary Material</b></td></tr>
-<tr><td><a href="#safety">4.0&nbsp;&nbsp;&nbsp;Safety in Mechanical Workshops</a></td><td><a href="Unit1Lesson3faq.php">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently Asked questions</a></td></tr>
+<tr><td width="65%"><b>Lesson 4 General Shop Safety</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit1/Lesson3/Unit1Lesson3.pdf" target="_blank" title="Download Lesson 4">Lesson 4 Download</a></td><td><b>Supplementary Material</b></td></tr>
+<tr><td><a href="#safety">4.0&nbsp;&nbsp;&nbsp;Safety in Mechanical Workshops</a></td><td><a href="Unit1lesson3faq.php">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently Asked questions</a></td></tr>
 <tr><td><a href="#general">4.1&nbsp;&nbsp;&nbsp;General Safety Precautions for the Mechanical Workshop</a></td></tr>
 <tr><td><a href="#equipment">4.2&nbsp;&nbsp;&nbsp;Clothing and Safety Equipment for the Mechanical Workshop</a></td></tr>
 <tr><td><a href="#guidelines">4.3&nbsp;&nbsp;&nbsp;Safety Guidelines for Hand Tools</a></td></tr>

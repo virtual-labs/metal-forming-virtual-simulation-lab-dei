@@ -37,7 +37,7 @@ else
 </tr></table><br/></div>
 <div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
 <table border="0" width="100%">
-<tr><td width="65%"><b>Lesson 7 Drilling</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/UNIT5/Unit5Lesson7.pdf" target="_blank" title="Download Lesson 7">Lesson 7 Download</a></td></tr>
+<tr><td width="65%"><b>Lesson 7 Drilling</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit5/Unit5Lesson7.pdf" target="_blank" title="Download Lesson 7">Lesson 7 Download</a></td></tr>
 <tr><td><a href="#introduction">7.0&nbsp;&nbsp;&nbsp;Introduction</a></td></tr>
 <tr><td><a href="#machines">7.1&nbsp;&nbsp;&nbsp;Drilling machines</a></td></tr>
 <tr><td><a href="#operation">7.2&nbsp;&nbsp;&nbsp;Drilling operation</a></td></tr>

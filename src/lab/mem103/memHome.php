@@ -17,7 +17,7 @@ else
 <div id="header"><br/>MEM-103 Manufacturing Processes-I<br /><br /></div>
 <table border="0" width="100%"><tr>
 <td width="30%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome, <?php echo $_SESSION['name'];?></td>
-<td style="text-align:right;"><a href="TentativeSchedule.php" title="Tentative Schedule of Lectures, July – December 2017">Tentative Schedule of Lectures</a></td>
+<td style="text-align:right;"><a href="TentativeSchedule.php" title="Tentative Schedule of Lectures">Tentative Schedule of Lectures</a></td>
 <td style="text-align:right;"><a href="mem.php" title="Manufacturing Processes-I">Lecture Notes</a></td>
 <td style="text-align:right;"><a href="../home.php" title="Metal Forming Virtual Simulation lab">MFVL Home</a></td>
 <td style="text-align:right;"><a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>

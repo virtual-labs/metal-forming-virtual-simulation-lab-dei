@@ -38,9 +38,9 @@ else
 <div>
 <table border="0" width="100%">
 <tr><td width="60%"><b>Lesson 3 CASTING PROCESS: MOULDING</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit3/Lesson3/Unit3Lesson3.pdf" target="_blank" title="Download Casting Process: Moulding">Lesson 3 Download</a></td><td><b>Supplementary Material</b></td></tr>
-<tr><td><dt><a href="#objectives">3.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objectives</a></dt></td><td><a href="Unit3Lesson3scq.php">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
-<tr><td><dt><a href="#moulding">3.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moulding Sand</a></dt></td><td><a href="Unit3Lesson3faq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently asked questions</a></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;3.1.1&nbsp;&nbsp;&nbsp;Green sand</td><td><a href="Unit3Lesson3tq.php">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal questions</a></td></tr>
+<tr><td><dt><a href="#objectives">3.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objectives</a></dt></td><td><a href="Unit3lesson3scq.php">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
+<tr><td><dt><a href="#moulding">3.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moulding Sand</a></dt></td><td><a href="Unit3lesson3faq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently asked questions</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;3.1.1&nbsp;&nbsp;&nbsp;Green sand</td><td><a href="Unit3lesson3tq.php">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal questions</a></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;3.1.2&nbsp;&nbsp;&nbsp;Dry sand</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;3.1.3&nbsp;&nbsp;&nbsp;Loam sand</td><td></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;3.1.4&nbsp;&nbsp;&nbsp;Parting sand</td><td></td></tr>

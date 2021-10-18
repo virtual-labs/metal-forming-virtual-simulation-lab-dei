@@ -18,7 +18,7 @@ else
 <div>
 <table Border="0" width="100%"><tr>
 <td width="35%" style="font-size:14px; color:#ff0066; font-weight:bold;">Welcome <?php echo $_SESSION['name'];?></td>
-<td style="text-align:right;"><a href="Unit1Lesson1.php" title="Overview of Manufacturing Processes">Lesson 2 Overview of Manufacturing Processes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<td style="text-align:right;"><a href="Unit1lesson1.php" title="Overview of Manufacturing Processes">Lesson 2 Overview of Manufacturing Processes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="memHome.php" title="Manufacturing Process-I">MEM103 Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mem_out.php" title="Sign out from Manufacturing Process">Logout</a></td>
 </tr></table><br/></div>
 <div>

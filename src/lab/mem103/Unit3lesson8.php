@@ -37,10 +37,10 @@ else
 </tr></table><br/></div>
 <div>
 <table border="0" width="100%">
-<tr><td width="65%"><b>Lesson 8 Special Casting Processes (Permanent)</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/UNIT3/Lesson8/Unit3Lesson8.pdf" target="_blank" title="Download Lesson 8">Lesson 8 Download</a></td><td><b>Supplementary Material</b></td></tr>
-<tr><td><a href="#permanent">8.1&nbsp;&nbsp;&nbsp;Permanent Mould Casting Processes</a></td><td>1. <a href="Unit3Lesson8faq.php">Frequently Asked Questions</a></td></tr>
-<tr><td><a href="#basic">8.2&nbsp;&nbsp;&nbsp;Basic Permanent Mould casting process (also known as gravity die casting)</a></td><td>2. <a href="Unit3Lesson8scq.php">Self-check questions</a></td></tr>
-<tr><td><a href="#die">8.3&nbsp;&nbsp;&nbsp;Die-Casting Process</a></td><td>3. <a href="Unit3Lesson8tq.php">Terminal questions</a></td></tr>
+<tr><td width="65%"><b>Lesson 8 Special Casting Processes (Permanent)</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit3/Lesson8/Unit3Lesson8.pdf" target="_blank" title="Download Lesson 8">Lesson 8 Download</a></td><td><b>Supplementary Material</b></td></tr>
+<tr><td><a href="#permanent">8.1&nbsp;&nbsp;&nbsp;Permanent Mould Casting Processes</a></td><td>1. <a href="Unit3lesson8faq.php">Frequently Asked Questions</a></td></tr>
+<tr><td><a href="#basic">8.2&nbsp;&nbsp;&nbsp;Basic Permanent Mould casting process (also known as gravity die casting)</a></td><td>2. <a href="Unit3lesson8scq.php">Self-check questions</a></td></tr>
+<tr><td><a href="#die">8.3&nbsp;&nbsp;&nbsp;Die-Casting Process</a></td><td>3. <a href="Unit3lesson8tq.php">Terminal questions</a></td></tr>
 <tr><td><a href="#centrifugal">8.4&nbsp;&nbsp;&nbsp;Centrifugal Casting Process</a></td></tr>
 <tr><td><a href="#slush">8.5&nbsp;&nbsp;&nbsp;Slush Casting</a></td></tr>
 <tr><td><a href="#continuous">8.6&nbsp;&nbsp;&nbsp;Continuous Casting</a></td></tr>

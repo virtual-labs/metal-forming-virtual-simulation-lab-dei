@@ -37,7 +37,7 @@ else
 </tr></table><br/></div>
 <div><p id="fbtab"><a href="#header" title="Back to Top"></a></p>
 <table border="0" width="100%">
-<tr><td width="65%"><b>Lesson 6 Shaping, Planing & Slotting Operations</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/UNIT5/Unit5Lesson6.pdf" target="_blank" title="Download Lesson 6">Lesson 6 Download</a></td></tr>
+<tr><td width="65%"><b>Lesson 6 Shaping, Planing & Slotting Operations</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit5/Unit5Lesson6.pdf" target="_blank" title="Download Lesson 6">Lesson 6 Download</a></td></tr>
 <tr><td><a href="#introduction">6.0&nbsp;&nbsp;&nbsp;Introduction</a></td></tr>
 <tr><td><a href="#shaper">6.1&nbsp;&nbsp;&nbsp;Shaper</a></td></tr>
 <tr><td><a href="#shaping">6.2&nbsp;&nbsp;&nbsp;Shaping operation</a></td></tr>

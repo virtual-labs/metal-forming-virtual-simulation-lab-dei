@@ -35,7 +35,7 @@ else
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-<b>Detailed Steps in Casting</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit1/Unit1CastingSteps.pdf" target="_blank" title="Download Detailed Steps in Casting">Detailed Steps in Casting Download</a><br/><br/>
+<b>Detailed Steps in Casting</b><br/><br/>
 1.Place pattern on molding board.<br/>
 2. Place drag parting surface down on molding board.<br/>
 3. Riddle sand over pattern until covered.<br/>

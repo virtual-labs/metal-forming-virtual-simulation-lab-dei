@@ -39,7 +39,7 @@ else
 <table border="0" width="100%">
 <tr><td width="65%"><b>Lesson 1 Metal Forming Processes</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit2/Lesson1/Unit2lesson1.pdf" target="_blank" title="Download Lesson 1">Lesson 1 Download</a></td><td><b>Supplementary Material</b></td></tr>
 <tr><td><a href="#introduction">1.1&nbsp;&nbsp;&nbsp;Introduction</a></dt><td><a href="Unit2Simulations.php?MEM103/Unit2/Simulations/Upsetting.mp4">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metal Forming Simulations</a></td></tr>
-<tr><td><a href="#independent">&nbsp;&nbsp;&nbsp;1.1.1&nbsp;&nbsp;&nbsp;Independent Process Variables in Metal Forming Processes</a></td><td><a href="Unit2Lesson1scq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
+<tr><td><a href="#independent">&nbsp;&nbsp;&nbsp;1.1.1&nbsp;&nbsp;&nbsp;Independent Process Variables in Metal Forming Processes</a></td><td><a href="Unit2lesson1scq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
 <tr><td><a href="#dependent">&nbsp;&nbsp;&nbsp;1.1.2&nbsp;&nbsp;&nbsp;Dependent Process Variables in Metal Forming Processes</a></td><td><a href="Unit2lesson1tq.php">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal questions</a></td></tr>
 <tr><td><a href="#hot">1.2&nbsp;&nbsp;&nbsp;Hot Working</a></td></tr>
 <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2.1&nbsp;&nbsp;&nbsp;Advantages of Hot-Working</td></tr>

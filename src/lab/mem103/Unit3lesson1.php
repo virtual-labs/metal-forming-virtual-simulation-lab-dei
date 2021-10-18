@@ -44,9 +44,9 @@ text-align:left;
 <table border="0" width="100%">
 <tr><td width="50%"><b>Lesson 1 CASTING PROCESS</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MEM103/Unit3/Lesson1/Unit3Lesson1.pdf" target="_blank" title="Download Casting Process">Lesson 1 Download</a></td><td><b>Supplementary Material</b></td></tr>
 <tr><td><dt><a href="#objectives">1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objectives</a></dt></td><td><a href="Unit3Simulations.php?MEM103/Unit3/Simulations/Casting.mp4">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Casting Simulations</a></td></tr>
-<tr><td><dt><a href="#casting">1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Casting Process</a></dt></td><td><a href="Unit3Lesson1scq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;1.1.1&nbsp;&nbsp;&nbsp;Advantages of Casting Process</td><td><a href="Unit3Lesson1faq.php">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently asked questions</a></td></tr>
-<tr><td>&nbsp;&nbsp;&nbsp;1.1.2&nbsp;&nbsp;&nbsp;Applications</td><td><a href="Unit3Lesson1tq.php">4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal questions</a></td></tr>
+<tr><td><dt><a href="#casting">1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Casting Process</a></dt></td><td><a href="Unit3lesson1scq.php">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-check questions</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;1.1.1&nbsp;&nbsp;&nbsp;Advantages of Casting Process</td><td><a href="Unit3lesson1faq.php">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frequently asked questions</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;1.1.2&nbsp;&nbsp;&nbsp;Applications</td><td><a href="Unit3lesson1tq.php">4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal questions</a></td></tr>
 <tr><td><dt><a href="#sand">1.2&nbsp;&nbsp;&nbsp;Sand Casting Process</a></dt></td><td></td></tr>
 <tr><td><dt><a href="#terminology">1.3&nbsp;&nbsp;&nbsp;Casting Terminology</a></dt></td><td></td></tr>
 <tr><td><dt><a href="#gating">1.4&nbsp;&nbsp;&nbsp;Gating System</a></dt></td><td></td></tr>
