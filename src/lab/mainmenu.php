@@ -6,7 +6,7 @@
 <li><a href="Step.php">Steps of Forming Process</a></li>
 <li><a href="Variable.php">Process Variables</a></li>
 <li><a href="Simulation_Setup.php">Simulation Setup</a></li>
-<li><a href="glossary.php">Glossary</a></li>
+<li><a href="glosary.php">Glossary</a></li>
 </ul>
 </li>
 <li class="dir"><a href="#" title="Equipments for Metal Forming">Equipments</a>
