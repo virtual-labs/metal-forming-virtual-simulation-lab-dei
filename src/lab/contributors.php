@@ -44,10 +44,10 @@ include("mainmenu.php");
 <a style="font-size:0.8em;" href="#" onClick="window.open('http://www.dei.ac.in');" title="Dayalbagh Educational Institute"><u>(www.dei.ac.in)</u></a></b>
 <table width="520" border="0" cellpadding="2" cellspacing="10">
   <tr>
-    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/73-dr-rahul-swarup-sharma" target="_blank" title="Profile - Dr. Rahul Swarup Sharma">Dr. Rahul Swarup Sharma</a> (Project Co-ordinator)</td>
+    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/73-dr-rahul-swarup-sharma" target="_blank" title="Profile - Prof. Rahul Swarup Sharma">Prof. Rahul Swarup Sharma</a> (Project Co-ordinator)</td>
   </tr>
   <tr>
-    <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/engineering/index.php/2012-12-08-09-23-43/mechanical-engg-faculty/18-mechanical-engineering-faculty/72-dr-k-hans-raj" target="_blank" title="Profile - Prof. K. Hans Raj">Prof. K. Hans Raj</a> (Advisor)</td>
+    <td>Prof. K. Hans Raj (Advisor)</td>
   </tr>
   <tr>
     <td><a style="color:#F08D20" href="https://www.dei.ac.in/dei/usic/index.php/usic-faculty/2-soami-piara-satsangee" target="_blank" title="Profile - Prof. S.P. Satsangee">Prof. S.P. Satsangee</a> (DEI Virtual Labs  Co-ordinator)</td>

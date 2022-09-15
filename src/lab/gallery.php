@@ -87,6 +87,7 @@ include("mainmenu.php");
 					<ul class="thumbnails category1">    
                     <li><img src="gallery/1.jpg"  alt="ITM, Gwalior" title="Virtual Lab Workshop at ITM, Gwalior"/></li>
                     <li><img src="gallery/2.jpg"  alt="SRM, Gwalior" title="Virtual Lab Workshop at Shri Group of Colleges, Gwalior"/></li>
+                    <li><img src="gallery/3RBS.jpg" alt="RBS, Bichpuri, Agra" title="Virtual Lab Workshop at Raja Balabant Singh Engineering Technical Campus, Bichpuri, Agra"/></li>
                     <li><img src="gallery/3.jpg" alt="HCST, Mathura" title="Virtual Lab Workshop at Hindustan College of Science & Technology, Mathura"/></li>
                     <li><img src="gallery/4.jpg" alt="HCST, Mathura" title="Virtual Lab Workshop at Institute of Engineering and Technology, Agra"/></li>
                     <li><img src="gallery/5.jpg" alt="HCST, Mathura" title="Virtual Lab Workshop at Hindustan College of Science & Technology, Mathura"/></li>
