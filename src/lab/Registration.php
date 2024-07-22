@@ -153,7 +153,7 @@ include("mainmenu.php");
 </script>
 <div style="background:#FFFFFF; position: relative; margin:auto; width: 1024px; min-height:550px;">
 <div style="padding:20px;">
-<b style="font-size:22px;"><a href="hindi/home.html" target="_blank">Metal Forming Virtual Simulation Lab in Hindi</a></b><br/><br/>
+<b style="font-size:22px;"><a href="hindi/home.html" target="_blank">Metal Forming Virtual Simulation Lab</a></b><br/><br/>
 <center><table border=0>
 <th style="background:#3399EE; font-size:16px; color:#FFFFFF;" width="45%">Registration</th>
 <th style="background:#3399EE; font-size:16px; color:#FFFFFF;" width="55%">Create an account</th>
